@@ -1,89 +1,154 @@
-﻿
-// ტექსტური
+﻿// უნარული           ++ -- += -= *= /=
+// ბინარული          +  -  *  /  %          > < >= <= == !=
 
-// 1. char  'Y'
-// 2. string "Y"
+//int x = 10;
+//int y = 5;
 
-//char testChar = 'z';
-//string testString = "Nika";
-
-
-// ლოგიკური true false
-
-//bool result = false; 
-
+//Console.WriteLine(x > y);
+//Console.WriteLine(x < y);
+//Console.WriteLine(x >= y);
+//Console.WriteLine(x <= y);
+//Console.WriteLine(x == y);
+//Console.WriteLine(x != y);
 
 
-// რიცხვითი
-
-//1.მთელი
-
-
-//byte   0 256
-//sbyte  -128 127
-
-//byte x = 200;
-//sbyte y = 15;
-
-//short 
-//ushort
+//Console.WriteLine(x = x + 10);
+//Console.WriteLine(x += 10);
+//Console.WriteLine(x -= 10);
+//Console.WriteLine(x *= 10);
+//Console.WriteLine(x /= 10);
 
 
-//int
-//uint
-
-//int f = 500;
-//uint z = 12;
-
-
-//long
-//ulong
-
-//long l = 50;
-
-//2.ათწილადი
+//Console.WriteLine(x + y);
+//Console.WriteLine(x - y);
+//Console.WriteLine(x * y);
+//Console.WriteLine(10 / 2);  /*-> 5*/
+//Console.WriteLine(10 % 2);   /*-> 0*/
 
 
-//float
-//float testFloat = 10.2F;
-
-//double
-//double testDouble = 12.2;
-
-
-//decimal
-//decimal testDecimal = 12.1M;
+//byte 0-255
 
 
 
-//ააწყვეთ სარეგისტრაციო ფორმა
-//შემოაყვანინეთ user-ს სახელი გვარი ასაკი
-//შეომყვანილი მნიშვნელობა დაბეჭდეთ კონსოლში
+//int first = 258; // Implicit
+//byte second = checked((byte)first); // Explicit
+
+//Console.WriteLine(second);
 
 
-Console.Write("First name: ");
-string firstName = Console.ReadLine();
-
-Console.WriteLine("------------------------------");
-
-Console.Write("Last name: ");
-string lastName = Console.ReadLine();
-
-Console.WriteLine("------------------------------");
-
-Console.Write("Age: ");
-int age = int.Parse(Console.ReadLine());
+//double x = 10.2;
+//float y = checked((float)x);
 
 
-Console.WriteLine("------------------------------");
-
-//Console.WriteLine(firstName + " " + lastName + " " + age);
-//Console.WriteLine($"Hello my name is {firstName} {lastName} I am {age} years old");
-//Console.WriteLine("Hello my name is {0} {1} I am {2} years old", firstName, lastName, age);
+//string x = 12.ToString();
 
 
-//სტრინგის ფორმატირებისთვის (ვწერთ ტექსტის შიგნით)
-//\t - ადგილის გამოტოვება
-//\n - ახალ ხაზზე ჩამოტანა
+//int firstNumber = 12;
+//int secondNumber = 13;
 
-//ჩემი არხი Sharpendev
+
+
+//switch (firstNumber)
+//{
+//    case > 5:
+//        Console.WriteLine("METIA 5 -ze");
+//        break;
+
+//    case < 5:
+//        Console.WriteLine("NAKLEBIA 5 -ze");
+//        break;
+
+//    default:
+//        Console.WriteLine("SXVA");
+//        break;
+//}
+
+
+
+
+
+
+//if (firstNumber > secondNumber)
+//{
+//    Console.WriteLine("MORE");
+//}
+//else if (secondNumber > firstNumber)
+//{
+//    Console.WriteLine("LESS");
+//}
+//else if (secondNumber > firstNumber)
+//{
+//    Console.WriteLine("LESS");
+//}
+//else if (secondNumber > firstNumber)
+//{
+//    Console.WriteLine("LESS");
+//}
+//else if (secondNumber > firstNumber)
+//{
+//    Console.WriteLine("LESS");
+//}
+//else
+//{
+//    Console.WriteLine("EQUALS");
+//}
+
+
+
+
+
+
+
+
+
+
+//Console.Write("First number: ");
+//int firstNumber = int.Parse(Console.ReadLine());
+//Console.Write("Second number: ");
+//int secondNumber = int.Parse(Console.ReadLine());
+//Console.WriteLine("[+ - * /]");
+//char operation = char.Parse(Console.ReadLine());
+
+
+
+//switch (operation)
+//{
+//    case '+':
+//        Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
+//        break;
+//    case '-':
+//        Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
+//        break;
+//    case '*':
+//        Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
+//        break;
+//    case '/':
+//        Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
+//        break;
+//}
+
+
+
+//if (operation == '+')
+//{
+//    Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
+//}
+//else if (operation == '-')
+//{
+//    Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
+//}
+//else if (operation == '*')
+//{
+//    Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
+//}
+//else if (operation == '/')
+//{
+//    Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
+//}
+
+
+
+
+
+
+
