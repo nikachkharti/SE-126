@@ -1,4 +1,6 @@
-﻿// უნარული           ++ -- += -= *= /=
+﻿#region პირველი 2 ლექცია
+
+// უნარული           ++ -- += -= *= /=
 // ბინარული          +  -  *  /  %          > < >= <= == !=
 
 //int x = 10;
@@ -145,6 +147,128 @@
 //{
 //    Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
 //}
+#endregion
+
+
+#region 3 ლექცია
+
+
+//1 დავალება
+
+//int number = Convert.ToInt32(Console.ReadLine());
+
+//Console.WriteLine("Shemoiyvanet ricxvi");
+//int number = int.Parse(Console.ReadLine());
+
+//if (number == 5 || number == 10)
+//{
+//    Console.WriteLine("Ricxvi aris 10 an 5");
+//}
+//else
+//{
+//    Console.WriteLine("Sxva ricxvi");
+//}
+
+//switch (number)
+//{
+//    case 5:
+//    case 10:
+//        Console.WriteLine("Ricxvi aris 10 an 5");
+//        break;
+//    default:
+//        Console.WriteLine("Sxva ricxvi");
+//        break;
+//}
+
+
+
+
+//2 დავალება
+
+//Console.WriteLine("Shemoiyvanet ricxvi");
+//int number = int.Parse(Console.ReadLine());
+
+//if (number % 2 == 0)
+//{
+//    Console.WriteLine("EVEN");
+//}
+//else
+//{
+//    Console.WriteLine("ODD");
+//}
+
+//bool check = number % 2 == 0;
+//switch (check)
+//{
+//    case true:
+//        Console.WriteLine("EVEN");
+//        break;
+//    default:
+//        Console.WriteLine("ODD");
+//        break;
+//}
+
+
+//3 დავალება
+//Console.WriteLine("Enter the letter");
+//char letter = char.Parse(Console.ReadLine());
+
+//if (letter == 'A' || letter == 'E' || letter == 'I' || letter == 'O' || letter == 'U')
+//{
+//    Console.WriteLine("VOWEL");
+//}
+//else
+//{
+//    Console.WriteLine("CONSONANT");
+//}
+
+
+//switch (letter)
+//{
+//    case 'A':
+//    case 'E':
+//    case 'I':
+//    case 'O':
+//    case 'U':
+//        Console.WriteLine("VOWEL");
+//        break;
+//    default:
+//        Console.WriteLine("CONSONANT");
+//        break;
+//}
+
+
+//4 დავალება
+
+//int dayAsNumber = int.Parse(Console.ReadLine());
+
+//switch (dayAsNumber)
+//{
+//    case 1:
+//        Console.WriteLine("Monday");
+//        break;
+//    case 2:
+//        Console.WriteLine("Tuesday");
+//        break;
+//    case 3:
+//        Console.WriteLine("Wednesday");
+//        break;
+//    case 4:
+//        Console.WriteLine("Thursday");
+//        break;
+//    case 5:
+//        Console.WriteLine("Friday");
+//        break;
+//    case 6:
+//        Console.WriteLine("Satuarday");
+//        break;
+//    case 7:
+//        Console.WriteLine("Sunday");
+//        break;
+//}
+
+
+#endregion
 
 
 
