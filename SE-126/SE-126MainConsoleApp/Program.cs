@@ -268,6 +268,61 @@
 //}
 
 
+
+
+//LOOP - ციკლი
+//for while foreach do while
+
+
+//int counter = 0;
+//while (counter < 5)
+//{
+//    Console.WriteLine("Nika");
+//    counter++;
+//}
+
+
+//for (int counter = 0; counter <= 5; counter++)
+//{
+//    Console.WriteLine("Nika");
+//}
+
+
+
+//do
+//{
+//    Console.WriteLine("Nika");
+//}
+//while (counter < 5);
+
+
+//string[] names = { "Giorgi", "Daviti", "Genadi" };
+//foreach (var item in names)
+//{
+//    Console.WriteLine(item);
+//}
+
+
+//char letter = char.Parse(Console.ReadLine());
+//if (letter >= 65 && letter <= 90)
+//{
+//    Console.WriteLine("UPPER");
+//}
+//else
+//{
+//    Console.WriteLine("LOWER");
+//}
+
+
+//for (int i = 1; i < 9; i++)
+//{
+//    for (int j = 1; j < 9; j++)
+//    {
+//        Console.WriteLine($"{i}*{j}={i * j}");
+//    }
+//}
+
+
 #endregion
 
 
