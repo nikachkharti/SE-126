@@ -327,6 +327,72 @@
 
 
 
+#region ლექცია 4
+
+
+//1. for ციკლის გამოყენებით კონსოლში დაბეჭდეთ რიცხვები 1 - დან 10 -ის ჩათვლით.
+
+
+//for (int i = 1; i <= 10; i++)
+//{
+//    if (i == 3)
+//    {
+//        break;
+//    }
+
+//    Console.WriteLine(i);
+//}
+
+
+//int i = 1;
+//while (i <= 10)
+//{
+//    if (i == 3)
+//    {
+//        break;
+//    }
+//    Console.WriteLine(i);
+//    i++;
+//}
+
+
+//int x = 10;
+//x = 15;
+
+//Console.WriteLine(x);
+
+
+//int[] array = { 10, 20, 30, 12 };
+
+//Console.WriteLine(array[3]);
+//Console.WriteLine(array[2]);
+//Console.WriteLine(array[1]);
+//Console.WriteLine(array[0]);
+
+
+// დაბეჭდეთ  მასივი უკუღმა
+//for(int i = array.Length - 1; i >= 0; i--)
+//{
+//    Console.WriteLine(array[i]);
+//}
+
+
+
+//მომხმარებელს შემოაყვანინეთ რიცხვი და კონსოლში დაბეჭდეთ true - თუ შემოყვანილ რიცხვს შეიცავს მასივი
+//სხვა შემთხვევაში დაბეჭდეთ false
+
+Random rand = new Random();
+int[] randomArray = new int[100];
+for (int i = 0; i < randomArray.Length; i++)
+{
+    randomArray[i] = rand.Next(201);
+}
+
+Console.ReadLine();
+
+
+#endregion
+
 
 
 
