@@ -381,14 +381,40 @@
 //მომხმარებელს შემოაყვანინეთ რიცხვი და კონსოლში დაბეჭდეთ true - თუ შემოყვანილ რიცხვს შეიცავს მასივი
 //სხვა შემთხვევაში დაბეჭდეთ false
 
-Random rand = new Random();
-int[] randomArray = new int[100];
-for (int i = 0; i < randomArray.Length; i++)
+
+
+//int[] randomArray = new int[3] { 10, 20, 30 };
+//int number = int.Parse(Console.ReadLine());
+
+//for (int i = 0; i < randomArray.Length; i++)
+//{
+//    if (randomArray[i] == number)
+//    {
+//        Console.WriteLine(true);
+//        break;
+//    }
+//}
+
+
+
+//მოძებნეთ მასივში დადებითი ელემენტების რაოდენობა
+
+
+int[] ar = { 10, 1, 1, -5, -22 };
+
+int sum = 0;
+for (int i = 0; i < ar.Length; i++)
 {
-    randomArray[i] = rand.Next(201);
+    if (ar[i] > 0)
+    {
+        sum += ar[i];
+    }
 }
 
+
 Console.ReadLine();
+
+
 
 
 #endregion
