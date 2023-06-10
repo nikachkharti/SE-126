@@ -428,8 +428,8 @@
 
 int[] intCollection = { 10, 20, 30, 10, 30, 100 };
 
+Console.WriteLine(FindIndex(intCollection, 30));
 
-Console.WriteLine(Sum(intCollection));
 
 
 int Sum(int[] integerArray)
@@ -443,87 +443,82 @@ int Sum(int[] integerArray)
     return sum;
 }
 
+int FindMaxElement(int[] intArray)
+{
+    int maxElement = intCollection[0];
+    for (int i = 0; i < intCollection.Length; i++)
+    {
+        if (intCollection[i] > maxElement)
+        {
+            maxElement = intCollection[i];
+        }
+    }
 
+    return maxElement;
+}
 
+void Distinct(int[] intCollection)
+{
+    for (int i = 0; i < intCollection.Length; i++)
+    {
+        bool notUnique = false;
+        for (int j = 0; j < intCollection.Length; j++)
+        {
+            if (i != j && intCollection[i] == intCollection[j])
+            {
+                notUnique = true;
+                break;
+            }
+        }
 
+        if (!notUnique)
+        {
+            Console.WriteLine(intCollection[i]);
+        }
+    }
+}
 
+int[] Sort(int[] intCollection)
+{
+    for (int i = 0; i < intCollection.Length - 1; i++)
+    {
+        for (int j = i + 1; j < intCollection.Length; j++)
+        {
+            if (intCollection[j] < intCollection[i])
+            {
+                int t = intCollection[j];
+                intCollection[j] = intCollection[i];
+                intCollection[i] = t;
+            }
+        }
+    }
 
+    return intCollection;
+}
 
+int FirstOrDefault(int[] intCollection, int numberToFind)
+{
+    for (int i = 0; i < intCollection.Length; i++)
+    {
+        if (intCollection[i] == numberToFind)
+        {
+            return intCollection[i];
+        }
+    }
+    return 0;
+}
 
-//int maxElement = intCollection[0];
-//for (int i = 0; i < intCollection.Length; i++)
-//{
-//    if (intCollection[i] > maxElement)
-//    {
-//        maxElement = intCollection[i];
-//    }
-//}
-
-//Console.WriteLine(maxElement);
-
-
-
-//for (int i = 0; i < intCollection.Length; i++)
-//{
-//    bool notUnique = false;
-//    for (int j = 0; j < intCollection.Length; j++)
-//    {
-//        if (i != j && intCollection[i] == intCollection[j])
-//        {
-//            notUnique = true;
-//            break;
-//        }
-//    }
-
-//    if (!notUnique)
-//    {
-//        Console.WriteLine(intCollection[i]);
-//    }
-//}
-
-
-
-
-//for (int i = 0; i < intCollection.Length - 1; i++)
-//{
-//    for (int j = i + 1; j < intCollection.Length; j++)
-//    {
-//        if (intCollection[j] < intCollection[i])
-//        {
-//            int t = intCollection[j];
-//            intCollection[j] = intCollection[i];
-//            intCollection[i] = t;
-//        }
-//    }
-//}
-
-
-
-
-//Console.Write("Please enter the number: ");
-//int numberToFind = int.Parse(Console.ReadLine());
-//for (int i = 0; i < intCollection.Length; i++)
-//{
-//    if (intCollection[i] == numberToFind)
-//    {
-//        Console.WriteLine(intCollection[i]);
-//        break;
-//    }
-//}
-
-
-
-
-//Console.Write("Please enter the number: ");
-//int numberToFind = int.Parse(Console.ReadLine());
-//for (int i = 0; i < intCollection.Length; i++)
-//{
-//    if (intCollection[i] == numberToFind)
-//    {
-//        Console.WriteLine(i);
-//        break;
-//    }
-//}
+int FindIndex(int[] intCollection, int numberToFind)
+{
+    for (int i = 0; i < intCollection.Length; i++)
+    {
+        if (intCollection[i] == numberToFind)
+        {
+            return i;
+        }
+    }
+    return 0;
+}
 
 
 
