@@ -400,19 +400,19 @@
 //მოძებნეთ მასივში დადებითი ელემენტების რაოდენობა
 
 
-int[] ar = { 10, 1, 1, -5, -22 };
+//int[] ar = { 10, 1, 1, -5, -22 };
 
-int sum = 0;
-for (int i = 0; i < ar.Length; i++)
-{
-    if (ar[i] > 0)
-    {
-        sum += ar[i];
-    }
-}
+//int sum = 0;
+//for (int i = 0; i < ar.Length; i++)
+//{
+//    if (ar[i] > 0)
+//    {
+//        sum += ar[i];
+//    }
+//}
 
 
-Console.ReadLine();
+//Console.ReadLine();
 
 
 
@@ -420,6 +420,135 @@ Console.ReadLine();
 #endregion
 
 
+
+
+#region ლექცია 5
+
+
+
+int[] intCollection = { 10, 20, 30, 10, 30, 100 };
+
+
+Console.WriteLine(Sum(intCollection));
+
+
+int Sum(int[] integerArray)
+{
+    int sum = 0;
+    for (int i = 0; i < integerArray.Length; i++)
+    {
+        sum += integerArray[i];
+    }
+
+    return sum;
+}
+
+
+
+
+
+
+
+
+//int maxElement = intCollection[0];
+//for (int i = 0; i < intCollection.Length; i++)
+//{
+//    if (intCollection[i] > maxElement)
+//    {
+//        maxElement = intCollection[i];
+//    }
+//}
+
+//Console.WriteLine(maxElement);
+
+
+
+//for (int i = 0; i < intCollection.Length; i++)
+//{
+//    bool notUnique = false;
+//    for (int j = 0; j < intCollection.Length; j++)
+//    {
+//        if (i != j && intCollection[i] == intCollection[j])
+//        {
+//            notUnique = true;
+//            break;
+//        }
+//    }
+
+//    if (!notUnique)
+//    {
+//        Console.WriteLine(intCollection[i]);
+//    }
+//}
+
+
+
+
+//for (int i = 0; i < intCollection.Length - 1; i++)
+//{
+//    for (int j = i + 1; j < intCollection.Length; j++)
+//    {
+//        if (intCollection[j] < intCollection[i])
+//        {
+//            int t = intCollection[j];
+//            intCollection[j] = intCollection[i];
+//            intCollection[i] = t;
+//        }
+//    }
+//}
+
+
+
+
+//Console.Write("Please enter the number: ");
+//int numberToFind = int.Parse(Console.ReadLine());
+//for (int i = 0; i < intCollection.Length; i++)
+//{
+//    if (intCollection[i] == numberToFind)
+//    {
+//        Console.WriteLine(intCollection[i]);
+//        break;
+//    }
+//}
+
+
+
+
+//Console.Write("Please enter the number: ");
+//int numberToFind = int.Parse(Console.ReadLine());
+//for (int i = 0; i < intCollection.Length; i++)
+//{
+//    if (intCollection[i] == numberToFind)
+//    {
+//        Console.WriteLine(i);
+//        break;
+//    }
+//}
+
+
+
+
+
+
+//int x = FunctionWithNumber();
+
+//Console.WriteLine(++x);
+
+
+//void Test()
+//{
+//    Console.WriteLine("test");
+//}
+
+
+//int FunctionWithNumber()
+//{
+//    return 10;
+//}
+
+
+
+#endregion
 
 
 
