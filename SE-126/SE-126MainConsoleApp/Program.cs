@@ -500,7 +500,8 @@
 //ფუნქციებში ისე რომ თითოეული ოპერაცია (მიმატება,გამოკლება,გამრავლება,გაყოფა)
 //იყოს ინდივიდუალური ფუნქცია.
 
-//აუცილებელი პირობა: კალკულატორი არ უნდა წყვეტდეს მუშაობას პირველივე შესრულებული ოპერაციის
+//აუცილებელი პირობა: კალკულატორი არ უნდა წყვეტდეს მუშაობას პირველივე შესრულებული
+//ოპერაციის
 //შემდეგ, პროგრამა უნდა მუშაობდეს როგორც რეალური კალკულატორი იქამდე სანამ მომხმარებელი
 //არ მოისურვებს აპლიკაციის შეჩერებას.
 
@@ -508,4 +509,26 @@
 #endregion
 
 
+//PrintInFile(name);
+//PrintInConsole(name);
 
+int x = Sum(5, 10);
+
+PrintInFile(x.ToString());
+
+int Sum(int number1, int number2)
+{
+    return number1 + number2;
+}
+
+void PrintInFile(string name)
+{
+    File.WriteAllText(@"../../../logger.txt", $"Me var {name}");
+}
+
+void PrintInConsole(string name)
+{
+    Console.WriteLine($"Me var {name}");
+}
+
+//void
