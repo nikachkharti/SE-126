@@ -94,59 +94,6 @@
 //{
 //    Console.WriteLine("EQUALS");
 //}
-
-
-
-
-
-
-
-
-
-
-//Console.Write("First number: ");
-//int firstNumber = int.Parse(Console.ReadLine());
-//Console.Write("Second number: ");
-//int secondNumber = int.Parse(Console.ReadLine());
-//Console.WriteLine("[+ - * /]");
-//char operation = char.Parse(Console.ReadLine());
-
-
-
-//switch (operation)
-//{
-//    case '+':
-//        Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
-//        break;
-//    case '-':
-//        Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
-//        break;
-//    case '*':
-//        Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
-//        break;
-//    case '/':
-//        Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
-//        break;
-//}
-
-
-
-//if (operation == '+')
-//{
-//    Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
-//}
-//else if (operation == '-')
-//{
-//    Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
-//}
-//else if (operation == '*')
-//{
-//    Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
-//}
-//else if (operation == '/')
-//{
-//    Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
-//}
 #endregion
 
 
@@ -425,100 +372,99 @@
 #region ლექცია 5
 
 
+//int[] intCollection = { 10, 20, 30, 10, 30, 100 };
 
-int[] intCollection = { 10, 20, 30, 10, 30, 100 };
-
-Console.WriteLine(FindIndex(intCollection, 30));
-
+//Console.WriteLine(FindIndex(intCollection, 30));
 
 
-int Sum(int[] integerArray)
-{
-    int sum = 0;
-    for (int i = 0; i < integerArray.Length; i++)
-    {
-        sum += integerArray[i];
-    }
 
-    return sum;
-}
+//int Sum(int[] integerArray)
+//{
+//    int sum = 0;
+//    for (int i = 0; i < integerArray.Length; i++)
+//    {
+//        sum += integerArray[i];
+//    }
 
-int FindMaxElement(int[] intArray)
-{
-    int maxElement = intCollection[0];
-    for (int i = 0; i < intCollection.Length; i++)
-    {
-        if (intCollection[i] > maxElement)
-        {
-            maxElement = intCollection[i];
-        }
-    }
+//    return sum;
+//}
 
-    return maxElement;
-}
+//int FindMaxElement(int[] intArray)
+//{
+//    int maxElement = intCollection[0];
+//    for (int i = 0; i < intCollection.Length; i++)
+//    {
+//        if (intCollection[i] > maxElement)
+//        {
+//            maxElement = intCollection[i];
+//        }
+//    }
 
-void Distinct(int[] intCollection)
-{
-    for (int i = 0; i < intCollection.Length; i++)
-    {
-        bool notUnique = false;
-        for (int j = 0; j < intCollection.Length; j++)
-        {
-            if (i != j && intCollection[i] == intCollection[j])
-            {
-                notUnique = true;
-                break;
-            }
-        }
+//    return maxElement;
+//}
 
-        if (!notUnique)
-        {
-            Console.WriteLine(intCollection[i]);
-        }
-    }
-}
+//void Distinct(int[] intCollection)
+//{
+//    for (int i = 0; i < intCollection.Length; i++)
+//    {
+//        bool notUnique = false;
+//        for (int j = 0; j < intCollection.Length; j++)
+//        {
+//            if (i != j && intCollection[i] == intCollection[j])
+//            {
+//                notUnique = true;
+//                break;
+//            }
+//        }
 
-int[] Sort(int[] intCollection)
-{
-    for (int i = 0; i < intCollection.Length - 1; i++)
-    {
-        for (int j = i + 1; j < intCollection.Length; j++)
-        {
-            if (intCollection[j] < intCollection[i])
-            {
-                int t = intCollection[j];
-                intCollection[j] = intCollection[i];
-                intCollection[i] = t;
-            }
-        }
-    }
+//        if (!notUnique)
+//        {
+//            Console.WriteLine(intCollection[i]);
+//        }
+//    }
+//}
 
-    return intCollection;
-}
+//int[] Sort(int[] intCollection)
+//{
+//    for (int i = 0; i < intCollection.Length - 1; i++)
+//    {
+//        for (int j = i + 1; j < intCollection.Length; j++)
+//        {
+//            if (intCollection[j] < intCollection[i])
+//            {
+//                int t = intCollection[j];
+//                intCollection[j] = intCollection[i];
+//                intCollection[i] = t;
+//            }
+//        }
+//    }
 
-int FirstOrDefault(int[] intCollection, int numberToFind)
-{
-    for (int i = 0; i < intCollection.Length; i++)
-    {
-        if (intCollection[i] == numberToFind)
-        {
-            return intCollection[i];
-        }
-    }
-    return 0;
-}
+//    return intCollection;
+//}
 
-int FindIndex(int[] intCollection, int numberToFind)
-{
-    for (int i = 0; i < intCollection.Length; i++)
-    {
-        if (intCollection[i] == numberToFind)
-        {
-            return i;
-        }
-    }
-    return 0;
-}
+//int FirstOrDefault(int[] intCollection, int numberToFind)
+//{
+//    for (int i = 0; i < intCollection.Length; i++)
+//    {
+//        if (intCollection[i] == numberToFind)
+//        {
+//            return intCollection[i];
+//        }
+//    }
+//    return 0;
+//}
+
+//int FindIndex(int[] intCollection, int numberToFind)
+//{
+//    for (int i = 0; i < intCollection.Length; i++)
+//    {
+//        if (intCollection[i] == numberToFind)
+//        {
+//            return i;
+//        }
+//    }
+//    return 0;
+//}
 
 
 
@@ -541,6 +487,22 @@ int FindIndex(int[] intCollection, int numberToFind)
 //    return 10;
 //}
 
+
+
+#endregion
+
+
+
+#region ლექცია 6
+
+//საკლასო სავარჯიშო:
+//პირველ გაკვეთილზე შესრულებული დავალება კალკულატორი გადაანაწილეთ
+//ფუნქციებში ისე რომ თითოეული ოპერაცია (მიმატება,გამოკლება,გამრავლება,გაყოფა)
+//იყოს ინდივიდუალური ფუნქცია.
+
+//აუცილებელი პირობა: კალკულატორი არ უნდა წყვეტდეს მუშაობას პირველივე შესრულებული ოპერაციის
+//შემდეგ, პროგრამა უნდა მუშაობდეს როგორც რეალური კალკულატორი იქამდე სანამ მომხმარებელი
+//არ მოისურვებს აპლიკაციის შეჩერებას.
 
 
 #endregion
