@@ -505,30 +505,101 @@
 //შემდეგ, პროგრამა უნდა მუშაობდეს როგორც რეალური კალკულატორი იქამდე სანამ მომხმარებელი
 //არ მოისურვებს აპლიკაციის შეჩერებას.
 
+//PrintInFile(name);
+//PrintInConsole(name);
+
+//int x = Sum(5, 10);
+
+//PrintInFile(x.ToString());
+
+//int Sum(int number1, int number2)
+//{
+//    return number1 + number2;
+//}
+
+//void PrintInFile(string name)
+//{
+//    File.WriteAllText(@"../../../logger.txt", $"Me var {name}");
+//}
+
+//void PrintInConsole(string name)
+//{
+//    Console.WriteLine($"Me var {name}");
+//}
+
+
 
 #endregion
 
 
-//PrintInFile(name);
-//PrintInConsole(name);
 
-int x = Sum(5, 10);
 
-PrintInFile(x.ToString());
+#region ლექცია 7
 
-int Sum(int number1, int number2)
+
+Person person1 = new Person("Nika", 30);
+//person1.name = "Nika";
+//person1.age = 30;
+
+Person person2 = new Person("Giorgi", 12);
+//person2.name = "Giorgi";
+//person2.age = 12;
+
+
+Person person3 = new Person()
 {
-    return number1 + number2;
+    name = "Daviti",
+    age = 30,
+};
+
+
+//შექმენით სტუდენტის კლასი შემდეგი პარამეტრებით
+//სახელი,
+//გვარი
+//ასაკი
+//პირადი ნომერი
+//ტელ ნომერი
+//ელ-ფოსტა
+
+
+
+class Person
+{
+    public string name;
+    public int age;
+
+    public void DsiplayInfo()
+    {
+        Console.WriteLine(name);
+    }
+
+    public Person(string name, int age)
+    {
+        this.name = name;
+        this.age = age;
+
+        Console.WriteLine($"{this.name} {this.age}");
+    }
+
+    public Person(int x)
+    {
+    }
+
+
+    public Person(string x)
+    {
+    }
+
+    public Person()
+    {
+    }
 }
 
-void PrintInFile(string name)
-{
-    File.WriteAllText(@"../../../logger.txt", $"Me var {name}");
-}
 
-void PrintInConsole(string name)
-{
-    Console.WriteLine($"Me var {name}");
-}
 
-//void
+
+
+
+
+#endregion
+
