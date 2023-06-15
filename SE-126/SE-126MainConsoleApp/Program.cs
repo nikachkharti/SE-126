@@ -1,4 +1,8 @@
-﻿#region პირველი 2 ლექცია
+﻿using SE_126MainConsoleApp;
+
+
+
+#region პირველი 2 ლექცია
 
 // უნარული           ++ -- += -= *= /=
 // ბინარული          +  -  *  /  %          > < >= <= == !=
@@ -537,63 +541,55 @@
 #region ლექცია 7
 
 
-Person person1 = new Person("Nika", 30);
-//person1.name = "Nika";
-//person1.age = 30;
 
-Person person2 = new Person("Giorgi", 12);
-//person2.name = "Giorgi";
-//person2.age = 12;
-
-
-Person person3 = new Person()
-{
-    name = "Daviti",
-    age = 30,
-};
+Student std1 = new();
+std1.firstName = "Nika";
+std1.lastName = "Giorgadze";
+// პირადი ნომერი უნდა მიენიჭოს მხოლოდ იმ შემთხვევაში თუ სიგრძე არის 11
+std1.pin = "01";
+std1.SetAge(-12);
 
 
-//შექმენით სტუდენტის კლასი შემდეგი პარამეტრებით
-//სახელი,
-//გვარი
-//ასაკი
-//პირადი ნომერი
-//ტელ ნომერი
-//ელ-ფოსტა
+Console.WriteLine($"{std1.firstName} {std1.lastName} {std1.GetAge()}");
 
 
 
-class Person
-{
-    public string name;
-    public int age;
-
-    public void DsiplayInfo()
-    {
-        Console.WriteLine(name);
-    }
-
-    public Person(string name, int age)
-    {
-        this.name = name;
-        this.age = age;
-
-        Console.WriteLine($"{this.name} {this.age}");
-    }
-
-    public Person(int x)
-    {
-    }
+Console.ReadLine();
 
 
-    public Person(string x)
-    {
-    }
 
-    public Person()
-    {
-    }
-}
+
+//class Person
+//{
+//    public string name;
+//    public int age;
+
+//    public void DsiplayInfo()
+//    {
+//        Console.WriteLine(name);
+//    }
+
+//    public Person(string name, int age)
+//    {
+//        this.name = name;
+//        this.age = age;
+
+//        Console.WriteLine($"{this.name} {this.age}");
+//    }
+
+//    public Person(int x)
+//    {
+//    }
+
+
+//    public Person(string x)
+//    {
+//    }
+
+//    public Person()
+//    {
+//    }
+//}
 
 
 
