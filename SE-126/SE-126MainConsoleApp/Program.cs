@@ -607,13 +607,16 @@
 
 
 Person person1 = new Person();
-person1.firstname = "giorgi";
-person1.lastName = "giorgadze";
+person1.FirstName = "giorgi";
+person1.LastName = "giorgadze";
 person1.Age = 30;
 
 
-Console.WriteLine($"{person1.firstname} {person1.lastName} {person1.Age}");
+Console.WriteLine($"{person1.FirstName} {person1.LastName} {person1.Age}");
 
+
+
+//კოდში დააამატეთ ფუნქციონალი პირადი ნომერი პირადი ნომერი უნდა მინიჭება უნდა მოხდეს მხოლოდ 11 სიმბოლოს შემოყვანის შმეთხვევაში
 
 
 
