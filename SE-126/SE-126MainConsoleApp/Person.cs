@@ -5,7 +5,6 @@ namespace SE_126MainConsoleApp
     {
         //Auto 
         public string FirstName { get; set; }
-
         public string LastName { get; set; }
 
 
@@ -24,19 +23,19 @@ namespace SE_126MainConsoleApp
         }
 
 
+        private string pin;
+        public string Pin
+        {
+            get { return pin; }
+            set
+            {
+                if (value.Length == 11)
+                {
+                    pin = value;
+                }
+            }
+        }
 
-        //public void SetAge(int value)
-        //{
-        //    if (value > 0)
-        //    {
-        //        age = value; 
-        //    }
-        //}
-
-        //public int GetAge()
-        //{
-        //    return age;
-        //}
 
     }
 }
