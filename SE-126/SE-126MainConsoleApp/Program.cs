@@ -542,20 +542,20 @@
 
 
 
-Student std1 = new();
-std1.firstName = "Nika";
-std1.lastName = "Giorgadze";
-// პირადი ნომერი უნდა მიენიჭოს მხოლოდ იმ შემთხვევაში თუ
-// სიგრძე არის 11
-std1.SetPin("01024085083");
-std1.SetAge(12);
+//Student std1 = new();
+//std1.firstName = "Nika";
+//std1.lastName = "Giorgadze";
+//// პირადი ნომერი უნდა მიენიჭოს მხოლოდ იმ შემთხვევაში თუ
+//// სიგრძე არის 11
+//std1.SetPin("01024085083");
+//std1.SetAge(12);
 
 
-Console.WriteLine($"{std1.firstName} {std1.lastName} {std1.GetAge()} {std1.GetPin()}");
+//Console.WriteLine($"{std1.firstName} {std1.lastName} {std1.GetAge()} {std1.GetPin()}");
 
 
 
-Console.ReadLine();
+//Console.ReadLine();
 
 
 
@@ -600,3 +600,22 @@ Console.ReadLine();
 
 #endregion
 
+
+
+#region ლექცია 8
+
+
+
+Person person1 = new Person();
+person1.firstname = "giorgi";
+person1.lastName = "giorgadze";
+person1.Age = 30;
+
+
+Console.WriteLine($"{person1.firstname} {person1.lastName} {person1.Age}");
+
+
+
+
+
+#endregion
