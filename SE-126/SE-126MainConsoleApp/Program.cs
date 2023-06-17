@@ -606,14 +606,16 @@
 
 
 
-Person person1 = new Person();
-person1.FirstName = "giorgi";
-person1.LastName = "giorgadze";
-person1.Age = 30;
-person1.Pin = "01024085741";
+//Person person1 = new Person();
+//person1.FirstName = "giorgi";
+//person1.LastName = "giorgadze";
+//person1.Age = 30;
+//person1.Pin = "01024085741";
 
 
-Console.WriteLine($"{person1.FirstName} {person1.LastName} {person1.Age} {person1.Pin}");
+//Console.WriteLine($"{person1.FirstName} {person1.LastName} {person1.Age} {person1.Pin}");
+
+
 
 
 //⦁	დაწერეთ ანგარიშს კლასი, რომელსაც ექნება
@@ -631,6 +633,38 @@ Console.WriteLine($"{person1.FirstName} {person1.LastName} {person1.Age} {person
 
 
 
+//Account nikasAccount = new Account();
+//nikasAccount.AccountNumber = "GETB012547896547123578";
+//nikasAccount.Currency = "GEL";
+//nikasAccount.Balance = 100;
 
+
+//Account nikasAccount = new Account()
+//{
+//    AccountNumber = "GETB012547896547123578",
+//    Currency = "GEL",
+//    Balance = 100,
+//};
+
+
+
+Client clientNika = new Client();
+clientNika.FirstName = "Nika";
+clientNika.LastName = "Chkhartishvili";
+clientNika.Pin = "01257412359";
+//clientNika.Account = nikasAccount;
+clientNika.Account = new Account()
+{
+    AccountNumber = "GETB012547896547123578",
+    Currency = "GEL",
+    Balance = 100,
+};
+
+
+
+Console.WriteLine($"{clientNika.FirstName} {clientNika.LastName} has {clientNika.Account.Balance} {clientNika.Account.Currency}");
+
+
+// დაამატეთ თანხის განაღდების და ბალანსზე თანხის შეტანის ფუნქციონალი.
 
 #endregion
