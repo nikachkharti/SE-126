@@ -648,21 +648,21 @@
 
 
 
-Client clientNika = new Client();
-clientNika.FirstName = "Nika";
-clientNika.LastName = "Chkhartishvili";
-clientNika.Pin = "01257412359";
-//clientNika.Account = nikasAccount;
-clientNika.Account = new Account()
-{
-    AccountNumber = "GETB012547896547123578",
-    Currency = "GEL",
-    Balance = 100,
-};
+//Client clientNika = new Client();
+//clientNika.FirstName = "Nika";
+//clientNika.LastName = "Chkhartishvili";
+//clientNika.Pin = "01257412359";
+////clientNika.Account = nikasAccount;
+//clientNika.Account = new Account()
+//{
+//    AccountNumber = "GETB012547896547123578",
+//    Currency = "GEL",
+//    Balance = 100,
+//};
 
 
 
-Console.WriteLine($"{clientNika.FirstName} {clientNika.LastName} has {clientNika.Account.Balance} {clientNika.Account.Currency}");
+//Console.WriteLine($"{clientNika.FirstName} {clientNika.LastName} has {clientNika.Account.Balance} {clientNika.Account.Currency}");
 
 
 // დაამატეთ თანხის განაღდების და ბალანსზე თანხის შეტანის ფუნქციონალი.
@@ -673,6 +673,18 @@ Console.WriteLine($"{clientNika.FirstName} {clientNika.LastName} has {clientNika
 //1. შექმენით მანქანის კლასი შესაბამისი პარამეტრებით
 //2. გააკეთეთ გარდაქმნის ფუნქციონალი რომელსაც შეეძლება მიიღოს string პარამეტრი და გადაცემული პარამეტრი გარდაქმნას
 //მანქანის ობიექტად
+
+
+//Car carObj1 = new();
+//Car result = carObj1.Parse("CX Automotive,XM v6,6,3,Front-Wheel Drive,Manual 5-spd,13,15");
+
+string[] dataArray = File.ReadAllLines(@"../../../vehicles.csv");
+Car[] cars = new Car[dataArray.Length];
+
+for (int i = 0; i < dataArray.Length; i++)
+{
+    cars[i] = Car.Parse(dataArray[i]);
+}
 
 
 

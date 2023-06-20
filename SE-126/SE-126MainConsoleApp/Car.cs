@@ -12,9 +12,25 @@
         public int Combined { get; set; }
         public int Highway { get; set; }
 
-        public Car Parse(string input)
+        public static Car Parse(string input)
         {
-            throw new NotImplementedException();
+            string[] splitedInput = input.Split(',');
+
+            if (splitedInput.Length != 9)
+                throw new FormatException("Input is in incorrect format");
+
+            Car result = new Car();
+            result.Make = splitedInput[0];
+            result.Model = splitedInput[1];
+            result.Cylinder = int.Parse(splitedInput[2]);
+            result.Engine = float.Parse(splitedInput[3]);
+            result.Drive = splitedInput[4];
+            result.Transmission = splitedInput[5];
+            result.City = int.Parse(splitedInput[6]);
+            result.Combined = int.Parse(splitedInput[7]);
+            result.Highway = int.Parse(splitedInput[8]);
+
+            return result;
         }
 
     }
