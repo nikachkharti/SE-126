@@ -12,5 +12,19 @@
 
             return parsedData;
         }
+
+        public static Car FirstOrDefault(Car[] cars, string name)
+        {
+            for (int i = 0; i < cars.Length; i++)
+            {
+                if (cars[i].Make.Contains(name))
+                {
+                    return cars[i];
+                }
+            }
+
+            return default;
+        }
+
     }
 }

@@ -687,7 +687,7 @@ string[] data = File.ReadAllLines(@"../../../vehicles.csv");
 Car[] cars = Algorithms.Select(data);
 
 //დაწერეთ ფუნქცია რომელიც cars მასივში მოძებნის პირველივე მერსედესს
-
+var firstMercedes = Algorithms.FirstOrDefault(cars, "Mercedes");
 
 
 Console.WriteLine();
