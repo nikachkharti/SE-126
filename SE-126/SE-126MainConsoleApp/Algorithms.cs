@@ -26,5 +26,20 @@
             return default;
         }
 
+        public static List<Car> Where(Car[] cars, string name)
+        {
+            List<Car> result = new();
+
+            for (int i = 0; i < cars.Length; i++)
+            {
+                if (cars[i].Make.Contains(name))
+                {
+                    result.Add(cars[i]);
+                }
+            }
+
+            return result;
+        }
+
     }
 }
