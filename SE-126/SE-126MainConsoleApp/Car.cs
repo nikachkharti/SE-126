@@ -4,31 +4,30 @@
     {
         public string Make { get; set; }
         public string Model { get; set; }
-        public int Cylinder { get; set; }
+        public byte Cylinder { get; set; }
         public float Engine { get; set; }
         public string Drive { get; set; }
         public string Transmission { get; set; }
-        public int City { get; set; }
-        public int Combined { get; set; }
-        public int Highway { get; set; }
+        public byte City { get; set; }
+        public byte Combined { get; set; }
+        public byte Highway { get; set; }
 
         public static Car Parse(string input)
         {
-            string[] splitedInput = input.Split(',');
+            string[] splitedInout = input.Split(',');
 
-            if (splitedInput.Length != 9)
-                throw new FormatException("Input is in incorrect format");
-
-            Car result = new Car();
-            result.Make = splitedInput[0];
-            result.Model = splitedInput[1];
-            result.Cylinder = int.Parse(splitedInput[2]);
-            result.Engine = float.Parse(splitedInput[3]);
-            result.Drive = splitedInput[4];
-            result.Transmission = splitedInput[5];
-            result.City = int.Parse(splitedInput[6]);
-            result.Combined = int.Parse(splitedInput[7]);
-            result.Highway = int.Parse(splitedInput[8]);
+            Car result = new Car()
+            {
+                Make = splitedInout[0],
+                Model = splitedInout[1],
+                Cylinder = byte.Parse(splitedInout[2]),
+                Engine = float.Parse(splitedInout[3]),
+                Drive = splitedInout[4],
+                Transmission = splitedInout[5],
+                City = byte.Parse(splitedInout[6]),
+                Combined = byte.Parse(splitedInout[7]),
+                Highway = byte.Parse(splitedInout[8])
+            };
 
             return result;
         }

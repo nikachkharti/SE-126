@@ -670,21 +670,35 @@
 #endregion
 
 
-//1. შექმენით მანქანის კლასი შესაბამისი პარამეტრებით
-//2. გააკეთეთ გარდაქმნის ფუნქციონალი რომელსაც შეეძლება მიიღოს string პარამეტრი და გადაცემული პარამეტრი გარდაქმნას
-//მანქანის ობიექტად
+
+#region ლექცია 10
 
 
-//Car carObj1 = new();
-//Car result = carObj1.Parse("CX Automotive,XM v6,6,3,Front-Wheel Drive,Manual 5-spd,13,15");
+//გავრცელებული ტიპები მონაცემებთნ სამუშაოდ
+// JSON
+// CSV -- Comma Separated Value
+// XML
 
-string[] dataArray = File.ReadAllLines(@"../../../vehicles.csv");
-Car[] cars = new Car[dataArray.Length];
 
-for (int i = 0; i < dataArray.Length; i++)
+// SQL
+
+
+
+
+
+string[] data = File.ReadAllLines(@"../../../vehicles.csv");
+
+Car[] parsedData = new Car[data.Length];
+for (int i = 0; i < data.Length; i++)
 {
-    cars[i] = Car.Parse(dataArray[i]);
+    parsedData[i] = Car.Parse(data[i]);
 }
 
 
 
+#endregion
+
+
+
+
+Console.WriteLine();
