@@ -671,9 +671,6 @@
 
 
 
-#region ლექცია 10
-
-
 //გავრცელებული ტიპები მონაცემებთნ სამუშაოდ
 // JSON
 // CSV -- Comma Separated Value
@@ -687,17 +684,9 @@
 
 
 string[] data = File.ReadAllLines(@"../../../vehicles.csv");
+Car[] cars = Algorithms.Select(data);
 
-Car[] parsedData = new Car[data.Length];
-for (int i = 0; i < data.Length; i++)
-{
-    parsedData[i] = Car.Parse(data[i]);
-}
-
-
-
-#endregion
-
+//დაწერეთ ფუნქცია რომელიც cars მასივში მოძებნის პირველივე მერსედესს
 
 
 
