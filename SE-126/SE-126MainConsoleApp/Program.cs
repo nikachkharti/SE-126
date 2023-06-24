@@ -1,4 +1,5 @@
 ﻿using SE_126MainConsoleApp;
+using System.Text.Json;
 
 
 
@@ -689,12 +690,35 @@ Car[] economicCars = Algorithms.Sort(cars);
 
 
 
+Car[] topTenEcnomicCars = Algorithms.Take(economicCars, 10);
 
-//დაწერეთ ფუნქცია რომელიც მოძებნის 10 ყველაზე ეკონომიურ მანქანას
 
+//string[] economicCarsAsString = new string[topTenEcnomicCars.Length];
+//for (int i = 0; i < topTenEcnomicCars.Length; i++)
+//{
+//    economicCarsAsString[i] = topTenEcnomicCars[i].ToString();
+//}
+
+//File.WriteAllLines(@"../../../economicVehicles.txt", economicCarsAsString);
+
+
+//string economicCarsAsJson = JsonSerializer.Serialize(topTenEcnomicCars, new JsonSerializerOptions() { WriteIndented = true });
+//File.WriteAllText(@"../../../economicVehicles.json", economicCarsAsJson);
+
+
+//string carsAsJsonString = File.ReadAllText(@"../../../economicVehicles.json");
+
+//List<Car> deserializedCars = JsonSerializer.Deserialize<List<Car>>(carsAsJsonString);
 
 
 
 Console.ReadKey();
+
+
+
+
+
+
+
 
 

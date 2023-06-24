@@ -59,6 +59,16 @@
             return cars;
         }
 
+        public static Car[] Take(Car[] cars, int quantity)
+        {
+            List<Car> result = new List<Car>();
 
+            for (int i = 0; i < quantity; i++)
+            {
+                result.Add(cars[i]);
+            }
+
+            return result.ToArray();
+        }
     }
 }

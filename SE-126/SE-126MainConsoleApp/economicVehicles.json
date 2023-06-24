@@ -1,0 +1,112 @@
+[
+  {
+    "Make": "Hyundai",
+    "Model": "Ioniq Blue",
+    "Cylinder": 4,
+    "Engine": 1.6,
+    "Drive": "Front-Wheel Drive",
+    "Transmission": "Automatic (AM6)",
+    "City": 57,
+    "Combined": 58,
+    "Highway": 59
+  },
+  {
+    "Make": "Hyundai",
+    "Model": "Ioniq Blue",
+    "Cylinder": 4,
+    "Engine": 1.6,
+    "Drive": "Front-Wheel Drive",
+    "Transmission": "Automatic (AM6)",
+    "City": 57,
+    "Combined": 58,
+    "Highway": 59
+  },
+  {
+    "Make": "Hyundai",
+    "Model": "Ioniq Blue",
+    "Cylinder": 4,
+    "Engine": 1.6,
+    "Drive": "Front-Wheel Drive",
+    "Transmission": "Automatic (AM6)",
+    "City": 57,
+    "Combined": 58,
+    "Highway": 59
+  },
+  {
+    "Make": "Hyundai",
+    "Model": "Ioniq Blue",
+    "Cylinder": 4,
+    "Engine": 1.6,
+    "Drive": "Front-Wheel Drive",
+    "Transmission": "Automatic (AM6)",
+    "City": 57,
+    "Combined": 58,
+    "Highway": 59
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Prius Eco",
+    "Cylinder": 4,
+    "Engine": 1.8,
+    "Drive": "Front-Wheel Drive",
+    "Transmission": "Automatic (variable gear ratios)",
+    "City": 58,
+    "Combined": 56,
+    "Highway": 53
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Prius Eco",
+    "Cylinder": 4,
+    "Engine": 1.8,
+    "Drive": "Front-Wheel Drive",
+    "Transmission": "Automatic (variable gear ratios)",
+    "City": 58,
+    "Combined": 56,
+    "Highway": 53
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Prius Eco",
+    "Cylinder": 4,
+    "Engine": 1.8,
+    "Drive": "Front-Wheel Drive",
+    "Transmission": "Automatic (variable gear ratios)",
+    "City": 58,
+    "Combined": 56,
+    "Highway": 53
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Prius Eco",
+    "Cylinder": 4,
+    "Engine": 1.8,
+    "Drive": "Front-Wheel Drive",
+    "Transmission": "Automatic (variable gear ratios)",
+    "City": 58,
+    "Combined": 56,
+    "Highway": 53
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Prius Eco",
+    "Cylinder": 4,
+    "Engine": 1.8,
+    "Drive": "Front-Wheel Drive",
+    "Transmission": "Automatic (variable gear ratios)",
+    "City": 58,
+    "Combined": 56,
+    "Highway": 53
+  },
+  {
+    "Make": "Hyundai",
+    "Model": "Ioniq",
+    "Cylinder": 4,
+    "Engine": 1.6,
+    "Drive": "Front-Wheel Drive",
+    "Transmission": "Automatic (AM6)",
+    "City": 55,
+    "Combined": 55,
+    "Highway": 54
+  }
+]
