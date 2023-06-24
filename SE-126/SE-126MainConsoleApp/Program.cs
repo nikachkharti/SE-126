@@ -685,17 +685,16 @@
 
 string[] data = File.ReadAllLines(@"../../../vehicles.csv");
 Car[] cars = Algorithms.Select(data);
-
-
-//var firstMercedes = Algorithms.FirstOrDefault(cars, "Mercedes");
-var allMercedeses = Algorithms.Where(cars, "NIKA CHKARTIHSIVLI");
+Car[] economicCars = Algorithms.Sort(cars);
 
 
 
 
+//დაწერეთ ფუნქცია რომელიც მოძებნის 10 ყველაზე ეკონომიურ მანქანას
 
 
 
 
+Console.ReadKey();
 
-Console.WriteLine();
+

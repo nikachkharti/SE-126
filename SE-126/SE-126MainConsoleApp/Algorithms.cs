@@ -41,5 +41,24 @@
             return result;
         }
 
+        public static Car[] Sort(Car[] cars)
+        {
+            for (int i = 0; i < cars.Length - 1; i++)
+            {
+                for (int j = i + 1; j < cars.Length; j++)
+                {
+                    if (cars[j].Combined > cars[i].Combined)
+                    {
+                        Car tempCar = cars[j];
+                        cars[j] = cars[i];
+                        cars[i] = tempCar;
+                    }
+                }
+            }
+
+            return cars;
+        }
+
+
     }
 }
