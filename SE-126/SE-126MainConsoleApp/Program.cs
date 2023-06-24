@@ -686,11 +686,10 @@ using System.Text.Json;
 
 string[] data = File.ReadAllLines(@"../../../vehicles.csv");
 Car[] cars = Algorithms.Select(data);
-Car[] economicCars = Algorithms.Sort(cars);
 
 
-
-Car[] topTenEcnomicCars = Algorithms.Take(economicCars, 10);
+//Car[] economicCars = Algorithms.Sort(cars);
+//Car[] topTenEcnomicCars = Algorithms.Take(economicCars, 10);
 
 
 //string[] economicCarsAsString = new string[topTenEcnomicCars.Length];

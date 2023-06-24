@@ -1,4 +1,6 @@
-﻿namespace SE_126MainConsoleApp
+﻿using System.Net.Http.Headers;
+
+namespace SE_126MainConsoleApp
 {
     public class Car
     {
@@ -31,11 +33,5 @@
 
             return result;
         }
-
-
-        //public override string ToString()
-        //{
-        //    return $"{Make}-{Model}-{Cylinder}-{Engine}";
-        //}
     }
 }
