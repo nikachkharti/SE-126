@@ -672,6 +672,9 @@ using System.Text.Json;
 
 
 
+#region ლექცია 9 10 11
+
+
 //გავრცელებული ტიპები მონაცემებთნ სამუშაოდ
 // JSON
 // CSV -- Comma Separated Value
@@ -711,8 +714,8 @@ Car[] cars = Algorithms.Select(data);
 
 
 
-Console.ReadKey();
 
+#endregion
 
 
 
