@@ -721,15 +721,17 @@ using System.Text.Json;
 
 #region ლექცია 12
 
-//string[] data = File.ReadAllLines(@"../../../vehicles.csv");
-//Car[] cars = Algorithms.Select(data);
-
-List<int> intList = new() { 1, 2, 1, 10, 11, 15 };
-int[] ar = { 1, 2, 1, 10, 11, 15, 2 };
-List<string> names = new() { "nika", "irakli", "elene" };
+string[] data = File.ReadAllLines(@"../../../vehicles.csv");
+Car[] cars = Algorithms.Select(data);
 
 
-var result = Algorithms.FindLastIndex(ar, 2);
+
+//List<int> intList = new() { 1, 2, 1, 10, 11, 15 };
+//List<string> names = new() { "nika", "irakli", "elene" };
+
+//int[] ar = { 1, 2, 1, 10, 11, 15, 2 };
+//string[] arNames = { "nika", "elene", "irakli", "elene" };
+
 
 
 

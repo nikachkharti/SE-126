@@ -26,15 +26,14 @@ namespace SE_126MainConsoleApp
 
             return default;
         }
-        public static List<Car> Where(Car[] cars, string name)
+        public static List<T> Where<T>(T[] collection, T element)
         {
-            List<Car> result = new();
-
-            for (int i = 0; i < cars.Length; i++)
+            List<T> result = new();
+            for (int i = 0; i < collection.Length; i++)
             {
-                if (cars[i].Make.Contains(name))
+                if (collection[i].Equals(element))
                 {
-                    result.Add(cars[i]);
+                    result.Add(collection[i]);
                 }
             }
 
