@@ -687,8 +687,8 @@ using System.Text.Json;
 
 
 
-string[] data = File.ReadAllLines(@"../../../vehicles.csv");
-Car[] cars = Algorithms.Select(data);
+//string[] data = File.ReadAllLines(@"../../../vehicles.csv");
+//Car[] cars = Algorithms.Select(data);
 
 
 //Car[] economicCars = Algorithms.Sort(cars);
@@ -719,6 +719,26 @@ Car[] cars = Algorithms.Select(data);
 
 
 
+#region ლექცია 12
+
+//string[] data = File.ReadAllLines(@"../../../vehicles.csv");
+//Car[] cars = Algorithms.Select(data);
+
+List<int> intList = new() { 1, 2, 1, 10, 11, 15 };
+int[] ar = { 1, 2, 1, 10, 11, 15, 2 };
+List<string> names = new() { "nika", "irakli", "elene" };
+
+
+var result = Algorithms.FindLastIndex(ar, 2);
+
+
+
+
+Console.ReadKey();
+
+
+
+#endregion
 
 
 
