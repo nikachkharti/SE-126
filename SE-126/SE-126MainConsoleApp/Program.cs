@@ -748,15 +748,17 @@ using System.Text.Json;
 
 #region ლექცია 13
 
+string[] data = File.ReadAllLines(@"../../../vehicles.csv");
+var cars = Algorithms.Select(data, Car.Parse);
 
-int[] intAr = { 10, 21, 20, 1, 3, 15 };
 
-var result = Algorithms.Where(intAr, IsOdd).ToArray();
-var result2 = Algorithms.Take<int>(result, More1Less5, 3);
+
+//int[] intAr = { 10, 21, 20, 1, 3, 15 };
+
+//var result = Algorithms.Where(intAr, IsOdd).ToArray();
+//var result2 = Algorithms.FindIndex(intAr.ToList(), More1Less5);
 
 //Algorithms.PrintInformation(PrintInFile,"Me var nika");
-
-
 
 
 

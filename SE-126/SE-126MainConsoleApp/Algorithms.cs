@@ -3,7 +3,7 @@
 //დელეგატი
 public delegate bool CompareDelegate<T>(T parameter);
 public delegate void DisplayDelegate<T>(T text); //action
-
+public delegate TResult Transformer<TSource, TResult>(TSource source, TResult result);
 
 namespace SE_126MainConsoleApp
 {
@@ -14,12 +14,12 @@ namespace SE_126MainConsoleApp
             displayDelegate(text);
         }
 
-        public static Car[] Select(string[] data)
+        public static TResult[] Select<TSource, TResult>(TSource[] data, Transformer<TSource, TResult> selector)
         {
-            Car[] parsedData = new Car[data.Length];
+            TResult[] parsedData = new TResult[data.Length];
             for (int i = 0; i < data.Length; i++)
             {
-                parsedData[i] = Car.Parse(data[i]);
+                selector(data[i], parsedData[i]);
             }
 
             return parsedData;
@@ -96,11 +96,11 @@ namespace SE_126MainConsoleApp
             return result.ToArray();
         }
 
-        public static int FindIndex<T>(List<T> intList, T element)
+        public static int FindIndex<T>(List<T> intList, CompareDelegate<T> comparer)
         {
             for (int i = 0; i < intList.Count(); i++)
             {
-                if (intList[i].Equals(element))
+                if (comparer(intList[i]))
                 {
                     return i;
                 }
