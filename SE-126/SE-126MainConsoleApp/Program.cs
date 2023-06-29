@@ -721,16 +721,41 @@ using System.Text.Json;
 
 #region ლექცია 12
 
-string[] data = File.ReadAllLines(@"../../../vehicles.csv");
-Car[] cars = Algorithms.Select(data);
+//string[] data = File.ReadAllLines(@"../../../vehicles.csv");
+//Car[] cars = Algorithms.Select(data);
 
 
 
 //List<int> intList = new() { 1, 2, 1, 10, 11, 15 };
 //List<string> names = new() { "nika", "irakli", "elene" };
 
+
 //int[] ar = { 1, 2, 1, 10, 11, 15, 2 };
 //string[] arNames = { "nika", "elene", "irakli", "elene" };
+//var result = Algorithms.LastOrDefault(arNames, "elene");
+
+
+
+
+
+
+
+
+
+#endregion
+
+
+
+#region ლექცია 13
+
+
+int[] intAr = { 10, 21, 20, 1, 3, 15 };
+
+var result = Algorithms.Where(intAr, IsOdd).ToArray();
+var result2 = Algorithms.Take<int>(result, More1Less5, 3);
+
+//Algorithms.PrintInformation(PrintInFile,"Me var nika");
+
 
 
 
@@ -739,10 +764,39 @@ Car[] cars = Algorithms.Select(data);
 Console.ReadKey();
 
 
+bool More1Less5(int x)
+{
+    return x >= 1 && x <= 5;
+}
+
+void PrintInConsole(string message)
+{
+    Console.WriteLine(message);
+}
+
+void PrintInFile(string message)
+{
+    File.WriteAllText(@"../../../test.txt", message);
+}
+
+bool Is20(int x)
+{
+    return x == 20;
+}
+
+bool IsOdd(int x)
+{
+    return x % 2 != 0;
+}
+
+
+bool IsEven(int x)
+{
+    return x % 2 == 0;
+}
+
+
 
 #endregion
-
-
-
 
 
