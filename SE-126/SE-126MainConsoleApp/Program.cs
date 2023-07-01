@@ -745,9 +745,26 @@ using System.Text.Json;
 #region ლექცია 14
 
 
+//string[] data = File.ReadAllLines(@"../../../vehicles.csv");
+//Car[] cars = Algorithms.Select(data);
+//List<Car> allBmws = Algorithms.Where(cars, "BMW");
+//Car[] sortedBmws = Algorithms.Sort(cars);
+//Algorithms.Take(sortedBmws, 10);
+
+var data =
+    File.ReadAllLines(@"../../../vehicles.csv")
+    .Select()
+    .FirstOrDefault(x => x.Make.Contains("Opel"));
 
 
 
+
+//var dataFile = File
+//    .ReadAllLines(@"../../../vehicles.csv")
+//    .Select(Car.Parse)
+//    .Where(x => x.Make.Contains("BMW"))
+//    .OrderBy(x => x.Combined)
+//    .Take(10);
 
 
 #endregion

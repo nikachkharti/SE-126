@@ -1,10 +1,12 @@
-﻿using System.Text.Json;
+﻿using SE_126MainConsoleApp;
+using System.Text.Json;
 
 namespace SE_126MainConsoleApp
 {
+    public delegate bool SearchDelegate(Car carObj);
     public static class Algorithms
     {
-        public static Car[] Select(string[] data)
+        public static Car[] Select(this string[] data)
         {
             Car[] parsedData = new Car[data.Length];
             for (int i = 0; i < data.Length; i++)
@@ -14,11 +16,12 @@ namespace SE_126MainConsoleApp
 
             return parsedData;
         }
-        public static Car FirstOrDefault(Car[] cars, string name)
+
+        public static Car FirstOrDefault(this Car[] cars, SearchDelegate searchCondition)
         {
             for (int i = 0; i < cars.Length; i++)
             {
-                if (cars[i].Make.Contains(name))
+                if (searchCondition(cars[i]))
                 {
                     return cars[i];
                 }
@@ -26,7 +29,9 @@ namespace SE_126MainConsoleApp
 
             return default;
         }
-        public static List<Car> Where(Car[] cars, string name)
+
+
+        public static List<Car> Where(this Car[] cars, string name)
         {
             List<Car> result = new();
 
@@ -40,7 +45,7 @@ namespace SE_126MainConsoleApp
 
             return result;
         }
-        public static Car[] Sort(Car[] cars)
+        public static Car[] Sort(this Car[] cars)
         {
             for (int i = 0; i < cars.Length - 1; i++)
             {
@@ -57,7 +62,7 @@ namespace SE_126MainConsoleApp
 
             return cars;
         }
-        public static Car[] Take(Car[] cars, int quantity)
+        public static Car[] Take(this Car[] cars, int quantity)
         {
             List<Car> result = new List<Car>();
 
@@ -72,7 +77,7 @@ namespace SE_126MainConsoleApp
 
 
 
-        public static int FindIndex<T>(List<T> intList, T element)
+        public static int FindIndex<T>(this List<T> intList, T element)
         {
             for (int i = 0; i < intList.Count(); i++)
             {
@@ -83,7 +88,7 @@ namespace SE_126MainConsoleApp
             }
             return -1;
         }
-        public static int FindLastIndex<T>(T[] cars, T element)
+        public static int FindLastIndex<T>(this T[] cars, T element)
         {
             for (int i = cars.Length - 1; i >= 0; i--)
             {
@@ -96,7 +101,7 @@ namespace SE_126MainConsoleApp
         }
 
 
-        public static Car LastOrDefault(Car[] cars, string name)
+        public static Car LastOrDefault(this Car[] cars, string name)
         {
             for (int i = cars.Length - 1; i >= 0; i--)
             {
@@ -107,7 +112,7 @@ namespace SE_126MainConsoleApp
             }
             return default;
         }
-        public static int[] Reverse(int[] intArray)
+        public static int[] Reverse(this int[] intArray)
         {
             Stack<int> result = new();
             for (int i = 0; i < intArray.Length; i++)
@@ -117,7 +122,7 @@ namespace SE_126MainConsoleApp
 
             return result.ToArray();
         }
-        public static bool Any(int[] intArray, int element)
+        public static bool Any(this int[] intArray, int element)
         {
             for (int i = 0; i < intArray.Length; i++)
             {
@@ -128,7 +133,7 @@ namespace SE_126MainConsoleApp
             }
             return false;
         }
-        public static bool All(int[] intArray, int element)
+        public static bool All(this int[] intArray, int element)
         {
             for (int i = 0; i < intArray.Length; i++)
             {
@@ -139,7 +144,7 @@ namespace SE_126MainConsoleApp
             }
             return true;
         }
-        public static int Count(int[] intArray)
+        public static int Count(this int[] intArray)
         {
             int count = 0;
             for (int i = 0; i < intArray.Length; i++)
@@ -149,7 +154,7 @@ namespace SE_126MainConsoleApp
 
             return count;
         }
-        public static bool IsEmpty(int[] intArray)
+        public static bool IsEmpty(this int[] intArray)
         {
             //if (Count(intArray) == 0)
             //{
@@ -163,10 +168,10 @@ namespace SE_126MainConsoleApp
 
             return Count(intArray) == 0;
         }
-        public static string ToJson(Car[] cars, bool intended = true) => JsonSerializer.Serialize(cars, new JsonSerializerOptions { WriteIndented = intended });
+        public static string ToJson(this Car[] cars, bool intended = true) => JsonSerializer.Serialize(cars, new JsonSerializerOptions { WriteIndented = intended });
+        public static T FromJson<T>(this string source) => JsonSerializer.Deserialize<T>(source);
 
-        //TODO -- დაწერეთ FromJson მეთოდი
-        public static List<int> Concat(int[] intAr1, int[] intAr2)
+        public static List<int> Concat(this int[] intAr1, int[] intAr2)
         {
             List<int> result = new();
 
@@ -182,7 +187,7 @@ namespace SE_126MainConsoleApp
 
             return result;
         }
-        public static List<int> Distinct(int[] intCollection)
+        public static List<int> Distinct(this int[] intCollection)
         {
             List<int> uniqueElements = new();
 
@@ -206,7 +211,7 @@ namespace SE_126MainConsoleApp
 
             return uniqueElements;
         }
-        public static List<int> Distinct(List<int> intList)
+        public static List<int> Distinct(this List<int> intList)
         {
             HashSet<int> result = new();
             for (int i = 0; i < intList.Count; i++)
