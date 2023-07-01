@@ -751,11 +751,11 @@ using System.Text.Json;
 //    File.ReadAllLines(@"../../../vehicles.csv")
 //    .Select(x => Car.Parse(x));
 
-string[] stringData = { "10", "-21", "3", "16" };
+//string[] stringData = { "10", "-21", "3", "16" };
 
-int[] intData = stringData
-.Select(x => int.Parse(x))
-.Sort((x, y) => x < 0);
+//int[] intData = stringData
+//.Select(x => int.Parse(x))
+//.Sort((x, y) => x < 0);
 
 
 
