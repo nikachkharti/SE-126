@@ -1,30 +1,45 @@
 ﻿using System.Text.Json;
 
-//დელეგატი
-public delegate bool CompareDelegate<T>(T parameter);
-public delegate void DisplayDelegate<T>(T text); //action
-public delegate TResult Transformer<TSource, TResult>(TSource source, TResult result);
-
 namespace SE_126MainConsoleApp
 {
     public static class Algorithms
     {
-        public static void PrintInformation<T>(DisplayDelegate<T> displayDelegate, T text)
+        public static Car[] Select(string[] data)
         {
-            displayDelegate(text);
-        }
-
-        public static TResult[] Select<TSource, TResult>(TSource[] data, Transformer<TSource, TResult> selector)
-        {
-            TResult[] parsedData = new TResult[data.Length];
+            Car[] parsedData = new Car[data.Length];
             for (int i = 0; i < data.Length; i++)
             {
-                selector(data[i], parsedData[i]);
+                parsedData[i] = Car.Parse(data[i]);
             }
 
             return parsedData;
         }
+        public static Car FirstOrDefault(Car[] cars, string name)
+        {
+            for (int i = 0; i < cars.Length; i++)
+            {
+                if (cars[i].Make.Contains(name))
+                {
+                    return cars[i];
+                }
+            }
 
+            return default;
+        }
+        public static List<Car> Where(Car[] cars, string name)
+        {
+            List<Car> result = new();
+
+            for (int i = 0; i < cars.Length; i++)
+            {
+                if (cars[i].Make.Contains(name))
+                {
+                    result.Add(cars[i]);
+                }
+            }
+
+            return result;
+        }
         public static Car[] Sort(Car[] cars)
         {
             for (int i = 0; i < cars.Length - 1; i++)
@@ -42,65 +57,26 @@ namespace SE_126MainConsoleApp
 
             return cars;
         }
-
-        public static T FirstOrDefault<T>(T[] collection, CompareDelegate<T> comparerDelegate)
+        public static Car[] Take(Car[] cars, int quantity)
         {
-            for (int i = 0; i < collection.Length; i++)
-            {
-                if (comparerDelegate(collection[i]))
-                {
-                    return collection[i];
-                }
-            }
-
-            return default;
-        }
-        public static List<T> Where<T>(T[] collection, CompareDelegate<T> comparerDelegate)
-        {
-            List<T> result = new();
-            for (int i = 0; i < collection.Length; i++)
-            {
-                if (comparerDelegate(collection[i]))
-                {
-                    result.Add(collection[i]);
-                }
-            }
-
-            return result;
-        }
-        public static T[] Take<T>(T[] collection, int quantity)
-        {
-            List<T> result = new List<T>();
+            List<Car> result = new List<Car>();
 
             for (int i = 0; i < quantity; i++)
             {
-                result.Add(collection[i]);
+                result.Add(cars[i]);
             }
 
             return result.ToArray();
         }
 
 
-        public static T[] Take<T>(T[] collection, CompareDelegate<T> comparerDelegate, int quantity)
-        {
-            List<T> result = new List<T>();
 
-            for (int i = 0; i < quantity; i++)
-            {
-                if (comparerDelegate(collection[i]))
-                {
-                    result.Add(collection[i]);
-                }
-            }
 
-            return result.ToArray();
-        }
-
-        public static int FindIndex<T>(List<T> intList, CompareDelegate<T> comparer)
+        public static int FindIndex<T>(List<T> intList, T element)
         {
             for (int i = 0; i < intList.Count(); i++)
             {
-                if (comparer(intList[i]))
+                if (intList[i].Equals(element))
                 {
                     return i;
                 }
@@ -118,20 +94,22 @@ namespace SE_126MainConsoleApp
             }
             return -1;
         }
-        public static T LastOrDefault<T>(T[] cars, T model)
+
+
+        public static Car LastOrDefault(Car[] cars, string name)
         {
             for (int i = cars.Length - 1; i >= 0; i--)
             {
-                if (cars[i].Equals(model))
+                if (cars[i].Make.Contains(name))
                 {
                     return cars[i];
                 }
             }
             return default;
         }
-        public static T[] Reverse<T>(T[] intArray)
+        public static int[] Reverse(int[] intArray)
         {
-            Stack<T> result = new();
+            Stack<int> result = new();
             for (int i = 0; i < intArray.Length; i++)
             {
                 result.Push(intArray[i]);
@@ -139,29 +117,29 @@ namespace SE_126MainConsoleApp
 
             return result.ToArray();
         }
-        public static bool Any<T>(T[] intArray, T element)
+        public static bool Any(int[] intArray, int element)
         {
             for (int i = 0; i < intArray.Length; i++)
             {
-                if (intArray[i].Equals(element))
+                if (intArray[i] == element)
                 {
                     return true;
                 }
             }
             return false;
         }
-        public static bool All<T>(T[] intArray, T element)
+        public static bool All(int[] intArray, int element)
         {
             for (int i = 0; i < intArray.Length; i++)
             {
-                if (!intArray[i].Equals(element))
+                if (intArray[i] != element)
                 {
                     return false;
                 }
             }
             return true;
         }
-        public static int Count<T>(T[] intArray)
+        public static int Count(int[] intArray)
         {
             int count = 0;
             for (int i = 0; i < intArray.Length; i++)
@@ -171,7 +149,7 @@ namespace SE_126MainConsoleApp
 
             return count;
         }
-        public static bool IsEmpty<T>(T[] intArray)
+        public static bool IsEmpty(int[] intArray)
         {
             //if (Count(intArray) == 0)
             //{
@@ -185,18 +163,12 @@ namespace SE_126MainConsoleApp
 
             return Count(intArray) == 0;
         }
+        public static string ToJson(Car[] cars, bool intended = true) => JsonSerializer.Serialize(cars, new JsonSerializerOptions { WriteIndented = intended });
 
-        //TODO გასატესტი
-        public static string ToJson<T>(T[] cars, bool intended = true) => JsonSerializer.Serialize(cars, new JsonSerializerOptions { WriteIndented = intended });
-        //TODO გასატესტი
-        public static T FromJson<T>(string data) => JsonSerializer.Deserialize<T>(data);
-        //TODO გასატესტი
-        public static List<T> FromJsonMany<T>(string data) => JsonSerializer.Deserialize<List<T>>(data);
-
-
-        public static List<T> Concat<T>(T[] intAr1, T[] intAr2)
+        //TODO -- დაწერეთ FromJson მეთოდი
+        public static List<int> Concat(int[] intAr1, int[] intAr2)
         {
-            List<T> result = new();
+            List<int> result = new();
 
             for (int i = 0; i < intAr1.Length; i++)
             {
@@ -210,16 +182,16 @@ namespace SE_126MainConsoleApp
 
             return result;
         }
-        public static List<T> Distinct<T>(T[] intCollection)
+        public static List<int> Distinct(int[] intCollection)
         {
-            List<T> uniqueElements = new();
+            List<int> uniqueElements = new();
 
             for (int i = 0; i < intCollection.Length; i++)
             {
                 bool notUnique = false;
                 for (int j = 0; j < intCollection.Length; j++)
                 {
-                    if (i != j && intCollection[i].Equals(intCollection[j]))
+                    if (i != j && intCollection[i] == intCollection[j])
                     {
                         notUnique = true;
                         break;
@@ -234,9 +206,9 @@ namespace SE_126MainConsoleApp
 
             return uniqueElements;
         }
-        public static List<T> Distinct<T>(List<T> intList)
+        public static List<int> Distinct(List<int> intList)
         {
-            HashSet<T> result = new();
+            HashSet<int> result = new();
             for (int i = 0; i < intList.Count; i++)
             {
                 result.Add(intList[i]);
