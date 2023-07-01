@@ -745,27 +745,23 @@ using System.Text.Json;
 #region ლექცია 14
 
 
-//string[] data = File.ReadAllLines(@"../../../vehicles.csv");
-//Car[] cars = Algorithms.Select(data);
-//List<Car> allBmws = Algorithms.Where(cars, "BMW");
-//Car[] sortedBmws = Algorithms.Sort(cars);
-//Algorithms.Take(sortedBmws, 10);
-
-var data =
-    File.ReadAllLines(@"../../../vehicles.csv")
-    .Select()
-    .FirstOrDefault(x => x.Make.Contains("Opel"));
 
 
+//var data =
+//    File.ReadAllLines(@"../../../vehicles.csv")
+//    .Select(x => Car.Parse(x));
+
+string[] stringData = { "10", "-21", "3", "16" };
+
+int[] intData = stringData
+.Select(x => int.Parse(x))
+.Sort((x, y) => x < 0);
 
 
-//var dataFile = File
-//    .ReadAllLines(@"../../../vehicles.csv")
-//    .Select(Car.Parse)
-//    .Where(x => x.Make.Contains("BMW"))
-//    .OrderBy(x => x.Combined)
-//    .Take(10);
 
+
+
+Console.ReadLine();
 
 #endregion
 
