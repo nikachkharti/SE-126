@@ -761,7 +761,136 @@ using System.Text.Json;
 
 
 
-Console.ReadLine();
+//Console.ReadLine();
+
+#endregion
+
+
+
+#region ლექცია 15
+
+
+//Person person1 = new()
+//{
+//    FirstName = "Giorgi",
+//    LastName = "Giorgadze"
+//};
+
+
+
+//Employee employee1 = new()
+//{
+//    FirstName = "Davit",
+//    LastName = "Davitidze",
+//    Salary = 500
+//};
+
+Student std1 = new Student()
+{
+    FirstName = "Giorgi",
+    LastName = "Menteshashvili",
+    Score = 99.9,
+    Subject = new Subject()
+    {
+        Title = "C#",
+        Credit = 20
+    }
+};
+
+
+Teacher teacher1 = new()
+{
+    FirstName = "Nika",
+    LastName = "Chkhartishvili",
+    Salary = 1000,
+    Subject = new Subject()
+    {
+        Title = "C#",
+        Credit = 20
+    }
+};
+
+Administration admin1 = new()
+{
+    FirstName = "Tets",
+    LastName = "Test",
+    Salary = 100000,
+};
+
+
+
+
+
+IntroduceYourself(std1);
+IntroduceYourself(teacher1);
+IntroduceYourself(admin1);
+
+
+
+void IntroduceYourself(Person obj)
+{
+    obj.Talk();
+}
+
+
+abstract class Person
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public abstract void Talk();
+}
+
+abstract class Employee : Person
+{
+    public double Salary { get; set; }
+}
+
+class Student : Person
+{
+    public double Score { get; set; }
+    public Subject Subject { get; set; } // კომპოზიცია
+
+    //პოლიმორფიზმი
+    public override void Talk()
+    {
+        Console.WriteLine($"Hello My name is {FirstName} {LastName} I have a score {Score} I study {Subject.Title}");
+    }
+}
+
+class Subject
+{
+    public string Title { get; set; }
+    public double Credit { get; set; }
+}
+
+class Teacher : Employee
+{
+    public Subject Subject { get; set; }
+
+    //პოლიმორფიზმი
+    public override void Talk()
+    {
+        Console.WriteLine($"Hello My name is {FirstName} {LastName} I am a teacher, I have salary {Salary} GEL, I teach {Subject.Title}");
+    }
+}
+
+class Administration : Employee
+{
+    //პოლიმორფიზმი
+    public override void Talk()
+    {
+        Console.WriteLine($"Hello My name is {FirstName} {LastName} I am an administartor, I have salary {Salary} GEL");
+    }
+}
+
+
+
+
+
+
+
+
+
 
 #endregion
 
