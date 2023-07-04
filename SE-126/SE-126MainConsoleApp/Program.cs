@@ -826,7 +826,6 @@ IntroduceYourself(teacher1);
 IntroduceYourself(admin1);
 
 
-
 void IntroduceYourself(Person obj)
 {
     obj.Talk();
@@ -839,6 +838,16 @@ abstract class Person
     public string LastName { get; set; }
     public abstract void Talk();
 }
+
+//abstract class Person
+//{
+//    public string FirstName { get; set; }
+//    public string LastName { get; set; }
+//    public virtual void Talk()
+//    {
+//        Console.WriteLine("HI");
+//    }
+//}
 
 abstract class Employee : Person
 {
