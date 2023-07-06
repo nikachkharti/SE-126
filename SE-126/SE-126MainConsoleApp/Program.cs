@@ -906,36 +906,46 @@ using System.Text.Json;
 #region ლექცია 16
 
 
-//Animal a = new Animal();
+/////////////დაწერეთ Counter - ის იარაღის ყიდვის ლოგიკა//////////////////////
+//უნდა მყავდეს Player შემდეგი პარამეტრებით
+//1.სიცოცხლე
+//2.ფული
+//გვქონდეს 4 ტიპის იარაღი პისტოლეტი,ავტომატური,დანა,ყუმბარა
+//იარაღს უნდა ქონდეს ფასი Damage
+// დავალების შესასრულებლად გამოიყენეთ ინტერფეისები და აბსტრაქტული კლასები
 
 
-abstract class Bird
-{
-    public int Health { get; set; } = 100;
-}
 
-interface IFlyer
-{
-    public abstract void Fly();
-}
 
-interface IInterface
-{
 
-}
 
-class Eagle : Bird, IFlyer, IInterface
-{
-    public void Fly()
-    {
-        Console.WriteLine("FLYING HIGH...");
-    }
-}
+//abstract class Bird
+//{
+//    public int Health { get; set; } = 100;
+//}
 
-class Penguin : Bird
-{
+//interface IFlyer
+//{
+//    public abstract void Fly();
+//}
 
-}
+//interface IInterface
+//{
+
+//}
+
+//class Eagle : Bird, IFlyer, IInterface
+//{
+//    public void Fly()
+//    {
+//        Console.WriteLine("FLYING HIGH...");
+//    }
+//}
+
+//class Penguin : Bird
+//{
+
+//}
 
 
 
