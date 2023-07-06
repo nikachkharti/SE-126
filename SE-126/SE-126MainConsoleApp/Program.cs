@@ -785,114 +785,112 @@ using System.Text.Json;
 //    Salary = 500
 //};
 
-Student std1 = new Student()
-{
-    FirstName = "Giorgi",
-    LastName = "Menteshashvili",
-    Score = 99.9,
-    Subject = new Subject()
-    {
-        Title = "C#",
-        Credit = 20
-    }
-};
+//Student std1 = new Student()
+//{
+//    FirstName = "Giorgi",
+//    LastName = "Menteshashvili",
+//    Score = 99.9,
+//    Subject = new Subject()
+//    {
+//        Title = "C#",
+//        Credit = 20
+//    }
+//};
 
 
-Teacher teacher1 = new()
-{
-    FirstName = "Nika",
-    LastName = "Chkhartishvili",
-    Salary = 1000,
-    Subject = new Subject()
-    {
-        Title = "C#",
-        Credit = 20
-    }
-};
+//Teacher teacher1 = new()
+//{
+//    FirstName = "Nika",
+//    LastName = "Chkhartishvili",
+//    Salary = 1000,
+//    Subject = new Subject()
+//    {
+//        Title = "C#",
+//        Credit = 20
+//    }
+//};
 
-Administration admin1 = new()
-{
-    FirstName = "Tets",
-    LastName = "Test",
-    Salary = 100000,
-};
-
-
+//Administration admin1 = new()
+//{
+//    FirstName = "Tets",
+//    LastName = "Test",
+//    Salary = 100000,
+//};
 
 
 
-IntroduceYourself(std1);
-IntroduceYourself(teacher1);
-IntroduceYourself(admin1);
 
 
-void IntroduceYourself(Person obj)
-{
-    obj.Talk();
-}
+//IntroduceYourself(std1);
+//IntroduceYourself(teacher1);
+//IntroduceYourself(admin1);
 
 
-abstract class Person
-{
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public abstract void Talk();
-}
+//void IntroduceYourself(Person obj)
+//{
+//    obj.Talk();
+//}
+
 
 //abstract class Person
 //{
 //    public string FirstName { get; set; }
 //    public string LastName { get; set; }
-//    public virtual void Talk()
+//    public abstract void Talk();
+//}
+
+////abstract class Person
+////{
+////    public string FirstName { get; set; }
+////    public string LastName { get; set; }
+////    public virtual void Talk()
+////    {
+////        Console.WriteLine("HI");
+////    }
+////}
+
+//abstract class Employee : Person
+//{
+//    public double Salary { get; set; }
+//}
+
+//class Student : Person
+//{
+//    public double Score { get; set; }
+//    public Subject Subject { get; set; } // კომპოზიცია
+
+//    //პოლიმორფიზმი
+//    public override void Talk()
 //    {
-//        Console.WriteLine("HI");
+//        Console.WriteLine($"Hello My name is {FirstName} {LastName} I have a score {Score} I study {Subject.Title}");
 //    }
 //}
 
-abstract class Employee : Person
-{
-    public double Salary { get; set; }
-}
+//class Subject
+//{
+//    public string Title { get; set; }
+//    public double Credit { get; set; }
+//}
 
-class Student : Person
-{
-    public double Score { get; set; }
-    public Subject Subject { get; set; } // კომპოზიცია
+//class Teacher : Employee
+//{
+//    public Subject Subject { get; set; }
 
-    //პოლიმორფიზმი
-    public override void Talk()
-    {
-        Console.WriteLine($"Hello My name is {FirstName} {LastName} I have a score {Score} I study {Subject.Title}");
-    }
-}
+//    //პოლიმორფიზმი
+//    public override void Talk()
+//    {
+//        Console.WriteLine($"Hello My name is {FirstName} {LastName} I am a teacher, I have salary {Salary} GEL, I teach {Subject.Title}");
+//    }
+//}
 
-class Subject
-{
-    public string Title { get; set; }
-    public double Credit { get; set; }
-}
-
-class Teacher : Employee
-{
-    public Subject Subject { get; set; }
-
-    //პოლიმორფიზმი
-    public override void Talk()
-    {
-        Console.WriteLine($"Hello My name is {FirstName} {LastName} I am a teacher, I have salary {Salary} GEL, I teach {Subject.Title}");
-    }
-}
-
-class Administration : Employee
-{
-    //პოლიმორფიზმი
-    public override void Talk()
-    {
-        Console.WriteLine($"Hello My name is {FirstName} {LastName} I am an administartor, I have salary {Salary} GEL");
-    }
-}
-
-
+//class Administration : Employee
+//{
+//    //პოლიმორფიზმი
+//    public override void Talk()
+//    {
+//        Console.WriteLine($"Hello My name is {FirstName} {LastName} I am an administartor, I have salary {Salary} GEL");
+//    }
+//}
 
 
 
@@ -904,3 +902,124 @@ class Administration : Employee
 #endregion
 
 
+
+#region ლექცია 16
+
+
+//Animal a = new Animal();
+
+
+abstract class Bird
+{
+    public int Health { get; set; } = 100;
+}
+
+interface IFlyer
+{
+    public abstract void Fly();
+}
+
+interface IInterface
+{
+
+}
+
+class Eagle : Bird, IFlyer, IInterface
+{
+    public void Fly()
+    {
+        Console.WriteLine("FLYING HIGH...");
+    }
+}
+
+class Penguin : Bird
+{
+
+}
+
+
+
+
+
+
+
+
+
+interface IUserService
+{
+    void Login();
+}
+
+interface IEmployeeService
+{
+    void PaySeller();
+}
+
+class AdministrationService : IUserService, IEmployeeService
+{
+    public void Login()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void PaySeller()
+    {
+        throw new NotImplementedException();
+    }
+}
+
+class TeacherService : IUserService, IEmployeeService
+{
+    public void Login()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void PaySeller()
+    {
+        throw new NotImplementedException();
+    }
+}
+
+class StudentService : IUserService
+{
+    public void Login()
+    {
+
+    }
+}
+
+
+
+
+
+
+
+
+public abstract class Animal
+{
+    public abstract void MakeVoice();
+}
+
+class Dog : Animal
+{
+    public override void MakeVoice()
+    {
+        Console.WriteLine("HAU HAU");
+    }
+}
+
+class Cat : Animal
+{
+    public override void MakeVoice()
+    {
+        Console.WriteLine("Meow");
+    }
+}
+
+
+
+
+
+
+#endregion
