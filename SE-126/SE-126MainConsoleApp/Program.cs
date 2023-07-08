@@ -1041,20 +1041,19 @@ using System.Text.Json;
 
 
 
-
-List<int> intList = new() { 10, -20, 1, 3 };
-
-
-string[] intAr = { "10", "20", "3", "1"};
-var res = intAr.Select((x,y)=>int.Parse(x));
+//List<int> intList = new() { 10, -20, 1, 3 };
 
 
+//string[] intAr = { "10", "20", "3", "1"};
+//var res = intAr.Select((x,y)=>int.Parse(x));
 
-HashSet<int> inSet = new() { 1, 1, 1, 1, 10, 10, 2, 13, -4 };
-Dictionary<int, string> numbersDictionary = new Dictionary<int, string>();
-numbersDictionary.Add(1, "erti");
-numbersDictionary.Add(2, "ori");
-numbersDictionary.Add(3, "sami");
+
+
+//HashSet<int> inSet = new() { 1, 1, 1, 1, 10, 10, 2, 13, -4 };
+//Dictionary<int, string> numbersDictionary = new Dictionary<int, string>();
+//numbersDictionary.Add(1, "erti");
+//numbersDictionary.Add(2, "ori");
+//numbersDictionary.Add(3, "sami");
 
 
 
@@ -1079,7 +1078,7 @@ numbersDictionary.Add(3, "sami");
 
 
 
-Console.ReadLine();
+//Console.ReadLine();
 
 
 #endregion
