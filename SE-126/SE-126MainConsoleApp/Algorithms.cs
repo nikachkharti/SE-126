@@ -1,5 +1,6 @@
 ﻿using SE_126MainConsoleApp;
 using System;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 
 namespace SE_126MainConsoleApp
@@ -12,28 +13,25 @@ namespace SE_126MainConsoleApp
 
     public static class Algorithms
     {
-        public static TResult[] Select<TSource, TResult>(this TSource[] data, Func<TSource, TResult> selector)
+        public static IEnumerable<TResult> Select<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector)
         {
-            TResult[] parsedData = new TResult[data.Length];
-            for (int i = 0; i < data.Length; i++)
+            foreach (var item in source)
             {
-                parsedData[i] = selector(data[i]);
+                yield return selector(item);
             }
-
-            return parsedData;
         }
-        public static T FirstOrDefault<T>(this T[] cars, Predicate<T> searchCondition)
+        public static T FirstOrDefault<T>(this IEnumerable<T> source, Predicate<T> predicate)
         {
-            for (int i = 0; i < cars.Length; i++)
+            foreach (var item in source)
             {
-                if (searchCondition(cars[i]))
+                if (predicate(item))
                 {
-                    return cars[i];
+                    return item;
                 }
             }
-
             return default;
         }
+
         public static List<T> Where<T>(this T[] cars, Predicate<T> searchCondition)
         {
             List<T> result = new();
@@ -76,17 +74,34 @@ namespace SE_126MainConsoleApp
 
             return result.ToArray();
         }
-        public static int FindIndex<T>(this List<T> intList, Predicate<T> predicate)
+
+        public static IEnumerable<T> NikasForeach<T>(this IEnumerable<T> source)
         {
-            for (int i = 0; i < intList.Count(); i++)
+            IEnumerator<T> sourceEnumerator = source.GetEnumerator();
+            while (sourceEnumerator.MoveNext())
             {
-                if (predicate(intList[i]))
+                //if (sourceEnumerator.Current.Equals(-20))
+                //{
+                //    yield break;
+                //}
+
+                yield return sourceEnumerator.Current;
+            }
+        }
+        public static int FindIndex<T>(this IEnumerable<T> source, Predicate<T> predicate)
+        {
+            int index = 0;
+            foreach (var item in source)
+            {
+                if (predicate(item))
                 {
-                    return i;
+                    return index;
                 }
+                ++index;
             }
             return -1;
         }
+
         public static int FindLastIndex<T>(this T[] collection, Func<T, bool> predicate)
         {
             for (int i = collection.Length - 1; i >= 0; i--)

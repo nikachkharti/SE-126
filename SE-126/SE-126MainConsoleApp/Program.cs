@@ -1,5 +1,7 @@
 ﻿using SE_126MainConsoleApp;
 using SE_126MainConsoleApp.CounterStrike;
+using System.Collections;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 
 
@@ -959,6 +961,100 @@ using System.Text.Json;
 //}
 
 
+//interface IUserService
+//{
+//    void Login();
+//}
+
+//interface IEmployeeService
+//{
+//    void PaySeller();
+//}
+
+//class AdministrationService : IUserService, IEmployeeService
+//{
+//    public void Login()
+//    {
+//        throw new NotImplementedException();
+//    }
+
+//    public void PaySeller()
+//    {
+//        throw new NotImplementedException();
+//    }
+//}
+
+//class TeacherService : IUserService, IEmployeeService
+//{
+//    public void Login()
+//    {
+//        throw new NotImplementedException();
+//    }
+
+//    public void PaySeller()
+//    {
+//        throw new NotImplementedException();
+//    }
+//}
+
+//class StudentService : IUserService
+//{
+//    public void Login()
+//    {
+
+//    }
+//}
+
+
+
+//public abstract class Animal
+//{
+//    public abstract void MakeVoice();
+//}
+
+//class Dog : Animal
+//{
+//    public override void MakeVoice()
+//    {
+//        Console.WriteLine("HAU HAU");
+//    }
+//}
+
+//class Cat : Animal
+//{
+//    public override void MakeVoice()
+//    {
+//        Console.WriteLine("Meow");
+//    }
+//}
+
+
+
+
+
+
+#endregion
+
+
+#region ლექცია 17
+
+
+
+
+
+List<int> intList = new() { 10, -20, 1, 3 };
+
+
+string[] intAr = { "10", "20", "3", "1"};
+var res = intAr.Select((x,y)=>int.Parse(x));
+
+
+
+HashSet<int> inSet = new() { 1, 1, 1, 1, 10, 10, 2, 13, -4 };
+Dictionary<int, string> numbersDictionary = new Dictionary<int, string>();
+numbersDictionary.Add(1, "erti");
+numbersDictionary.Add(2, "ori");
+numbersDictionary.Add(3, "sami");
 
 
 
@@ -966,81 +1062,24 @@ using System.Text.Json;
 
 
 
-interface IUserService
-{
-    void Login();
-}
-
-interface IEmployeeService
-{
-    void PaySeller();
-}
-
-class AdministrationService : IUserService, IEmployeeService
-{
-    public void Login()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void PaySeller()
-    {
-        throw new NotImplementedException();
-    }
-}
-
-class TeacherService : IUserService, IEmployeeService
-{
-    public void Login()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void PaySeller()
-    {
-        throw new NotImplementedException();
-    }
-}
-
-class StudentService : IUserService
-{
-    public void Login()
-    {
-
-    }
-}
 
 
 
 
 
 
-
-
-public abstract class Animal
-{
-    public abstract void MakeVoice();
-}
-
-class Dog : Animal
-{
-    public override void MakeVoice()
-    {
-        Console.WriteLine("HAU HAU");
-    }
-}
-
-class Cat : Animal
-{
-    public override void MakeVoice()
-    {
-        Console.WriteLine("Meow");
-    }
-}
+//numbersDictionary.TryGetValue(12, out string foundElement);
+//bool isAded = numbersDictionary.TryAdd(6, "sami");
+//string x = "120ASA";
+//if (int.TryParse(x, out var parsedResult))
+//{
+//    Console.WriteLine(parsedResult++);
+//}
 
 
 
 
+Console.ReadLine();
 
 
 #endregion
