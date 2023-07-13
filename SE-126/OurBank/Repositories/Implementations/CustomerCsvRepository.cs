@@ -5,40 +5,48 @@ namespace OurBank.Repositories
     public class CustomerCsvRepository : ICustomerRepository
     {
         const string _filePath = @"../../../Data/Customers.csv";
-        List<Customer> _customers = new();
-        int newElementAdded = 0;
+        private readonly List<Customer> _customers = new();
+        private readonly string _fileHeader = string.Empty;
 
         public CustomerCsvRepository()
         {
-            _customers = File
+            _customers = SelectCustomers();
+            _fileHeader = GetFileHeader();
+        }
+
+        public void Add(Customer model)
+        {
+            //ჩამატბეამდე შეამოწმეთ მაქსიმალური ID და ახალი ჩანაწერისთვის გაზრდეთ  + 1 ით
+            model.Id = _customers.Max(x => x.Id) + 1;
+            _customers.Add(model);
+            //ახალი user დაიმახსოვრეთ ფაილში
+            SaveChanges();
+        }
+
+        private void SaveChanges()
+        {
+            var customerStrings = _customers.Select(x => x.ToCsv());
+            File.WriteAllText(_filePath, $"{_fileHeader}\n");
+            File.AppendAllLines(_filePath, customerStrings);
+        }
+
+        private List<Customer> SelectCustomers()
+        {
+            return File
                 .ReadAllLines(_filePath)
                 .Skip(1)
                 .Select(x => x.ToCustomer())
                 .ToList();
         }
 
-        public void Add(Customer model)
-        {
-            if (!_customers.Any(x => x.Equals(model)))
-            {
-                //ჩამატბეამდე შეამოწმეთ მაქსიმალური ID და ახალი ჩანაწერისთვის გაზრდეთ  + 1 ით
-                model.Id = _customers.Max(x => x.Id) + 1;
-                _customers.Add(model);
-                //ახალი user დაიმახსოვრეთ ფაილში
-                SaveChanges(model);
-            }
-        }
 
-        private void SaveChanges(Customer customer)
-        {
-            File.AppendAllText(_filePath, customer.ToCsv());
-        }
+        private string GetFileHeader() => File.ReadAllLines(_filePath)[0];
     }
 
     internal static class CustomerExtension
     {
         //ფაილში დამახსოვრებისთვის შექმენით კიდევ ერთი extension მეთოდი სახელად ToCsv()
-        internal static string ToCsv(this Customer obj) => $"\n{obj.Id},{obj.Name},{obj.IdentityNumber},{obj.PhoneNumber},{obj.Email},{obj.CustomerType}";
+        internal static string ToCsv(this Customer obj) => $"{obj.Id},{obj.Name},{obj.IdentityNumber},{obj.PhoneNumber},{obj.Email},{obj.CustomerType}".Trim();
         internal static Customer ToCustomer(this string input)
         {
             Customer result = new();

@@ -11,7 +11,7 @@ using OurBank.Repositories;
 
 
 Customer newCustomer = new();
-newCustomer.Id = 11;
+//newCustomer.Id = 11;
 newCustomer.Name = "Irakli";
 newCustomer.PhoneNumber = "555337844";
 newCustomer.IdentityNumber = "01025877441";
@@ -19,39 +19,6 @@ newCustomer.Email = "irakli@gmail.com";
 newCustomer.CustomerType = CustomerType.Phyisical;
 
 
-Customer newCustomer2 = new();
-newCustomer2.Id = 11;
-newCustomer2.Name = "Irakli";
-newCustomer2.PhoneNumber = "555337844";
-newCustomer2.IdentityNumber = "01025877441";
-newCustomer2.Email = "irakli@gmail.com";
-newCustomer2.CustomerType = CustomerType.Phyisical;
-
-
-Console.WriteLine(newCustomer.Equals(newCustomer2));
-
-
-Console.WriteLine("---------------------------------------");
-
-
-string x = "X";
-string y = "X";
-
-
-Console.WriteLine(x.Equals(y));
-
-
-Console.WriteLine("---------------------------------------");
-
-
-int a = 10;
-int b = 10;
-
-
-Console.WriteLine(x.Equals(y));
-
-
-
-//CustomerCsvRepository customerCsvRepository = new();
-//customerCsvRepository.Add(newCustomer);
+CustomerCsvRepository customerCsvRepository = new();
+customerCsvRepository.Add(newCustomer);
 
