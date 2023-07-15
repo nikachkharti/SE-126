@@ -16,11 +16,12 @@ namespace OurBank.Repositories
 
         public void Add(Customer model)
         {
-            //ჩამატბეამდე შეამოწმეთ მაქსიმალური ID და ახალი ჩანაწერისთვის გაზრდეთ  + 1 ით
-            model.Id = _customers.Max(x => x.Id) + 1;
-            _customers.Add(model);
-            //ახალი user დაიმახსოვრეთ ფაილში
-            SaveChanges();
+            if (!_customers.Any(cust => cust.Equals(model)))
+            {
+                model.Id = _customers.Max(x => x.Id) + 1;
+                _customers.Add(model);
+                SaveChanges();
+            }
         }
 
         private void SaveChanges()
