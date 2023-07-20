@@ -20,7 +20,9 @@ namespace SE_126MainConsoleApp
                 yield return selector(item);
             }
         }
-        public static T FirstOrDefault<T>(this IEnumerable<T> source, Predicate<T> predicate)
+
+
+        public static T CustomFirstOrDefault<T>(this IEnumerable<T> source, Predicate<T> predicate)
         {
             foreach (var item in source)
             {
