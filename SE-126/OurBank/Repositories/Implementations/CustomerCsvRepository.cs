@@ -1,4 +1,5 @@
-﻿using OurBank.Models;
+﻿using OurBank.Exceptions;
+using OurBank.Models;
 
 namespace OurBank.Repositories
 {
@@ -42,6 +43,33 @@ namespace OurBank.Repositories
 
 
         private string GetFileHeader() => File.ReadAllLines(_filePath)[0];
+
+        public void Remove(int id)
+        {
+            try
+            {
+                if (_customers.Any(x => x.Id == id))
+                {
+                    var customerToRemove = Get(id);
+                    _customers.Remove(customerToRemove);
+
+                    //TODO ამ მომხმარებლის ანგარიშების მთლიანდ წაიშალოს...
+
+                    SaveChanges();
+                }
+                else
+                {
+                    throw new CustomerNotFoundException("Customer not found");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
+        public Customer Get(int id) => _customers.FirstOrDefault(x => x.Id == id);
     }
 
     internal static class CustomerExtension

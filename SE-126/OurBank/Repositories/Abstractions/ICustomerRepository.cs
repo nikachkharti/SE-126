@@ -4,6 +4,8 @@ namespace OurBank.Repositories
 {
     public interface ICustomerRepository
     {
-        public void Add(Customer model);
+        void Add(Customer model);
+        void Remove(int id);
+        Customer Get(int id);
     }
 }

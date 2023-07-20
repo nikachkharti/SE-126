@@ -8,5 +8,15 @@ namespace OurBank.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Customer Get(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

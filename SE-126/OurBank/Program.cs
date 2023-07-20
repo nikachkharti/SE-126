@@ -1,14 +1,12 @@
 ﻿using OurBank.Models;
 using OurBank.Repositories;
+using OurBank.Repositories.Implementations;
 using System.Transactions;
 
 
 //TODO
-//1.დაამატეთ მომხმარებლის წაშლის ფუნქციონალი CSV რეპოზიტორისთვის.
-    //1.2 როდესაც მომხმარებელი წაიშლება, ავტომატურად უნდა წაიშალოს ყველა ანგარიში რომელიც შექმნილია მის სახელზე.
+//1.2 როდესაც მომხმარებელი წაიშლება, ავტომატურად უნდა წაიშალოს ყველა ანგარიში რომელიც შექმნილია მის სახელზე.
 //2.დაამატეთ მომხმარებლის წაშლის და ჩამატების ფუნქციონალი Json რეპოზიტორისთვის.
-//3.შესაძლებელი უნდა იყოს ახალი ანგარიშის გახსნა ბანკის მომხმარებლისთვის ანუ Customer-ისთვის CSV რეპოზიტორისთვის.
-//4.შესაძლებელი უნდა იყოს შექმნილი ანგარიშის გაუქმება CSV რეპოზიტორისთვის.
 
 
 
@@ -22,5 +20,31 @@ newCustomer.CustomerType = CustomerType.Phyisical;
 
 
 CustomerCsvRepository customerCsvRepository = new();
-customerCsvRepository.Add(newCustomer);
+customerCsvRepository.Remove(11);
+
+
+
+//Account newAccount = new();
+//newAccount.Iban = "GETB123456789456123574";
+//newAccount.Currency = "GEL";
+//newAccount.Balance = 100;
+//newAccount.CustomerId = 11;
+//newAccount.Name = string.Empty;
+
+//Account newAccount2 = new();
+//newAccount2.Iban = "EUTB123456789456143574";
+//newAccount2.Currency = "EUR";
+//newAccount2.Balance = 100;
+//newAccount2.CustomerId = 11;
+//newAccount2.Name = string.Empty;
+
+
+//Account newAccount3 = new();
+//newAccount3.Iban = "USTB123456789456143574";
+//newAccount3.Currency = "USD";
+//newAccount3.Balance = 100;
+//newAccount3.CustomerId = 11;
+//newAccount3.Name = string.Empty;
+
+
 
