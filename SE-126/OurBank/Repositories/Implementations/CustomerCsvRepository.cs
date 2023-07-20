@@ -1,5 +1,6 @@
 ﻿using OurBank.Exceptions;
 using OurBank.Models;
+using OurBank.Repositories.Implementations;
 
 namespace OurBank.Repositories
 {
@@ -53,9 +54,9 @@ namespace OurBank.Repositories
                     var customerToRemove = Get(id);
                     _customers.Remove(customerToRemove);
 
-                    //TODO ამ მომხმარებლის ანგარიშების მთლიანდ წაიშალოს...
-
+                    new AccountCsvRepository().RemoveRange(customerToRemove);
                     SaveChanges();
+
                 }
                 else
                 {

@@ -4,23 +4,17 @@ using OurBank.Repositories.Implementations;
 using System.Transactions;
 
 
-//TODO
-//1.2 როდესაც მომხმარებელი წაიშლება, ავტომატურად უნდა წაიშალოს ყველა ანგარიში რომელიც შექმნილია მის სახელზე.
-//2.დაამატეთ მომხმარებლის წაშლის და ჩამატების ფუნქციონალი Json რეპოზიტორისთვის.
+//Customer newCustomer = new();
+//newCustomer.Id = 11;
+//newCustomer.Name = "Irakli";
+//newCustomer.PhoneNumber = "555337844";
+//newCustomer.IdentityNumber = "01025277441";
+//newCustomer.Email = "irakli@gmail.com";
+//newCustomer.CustomerType = CustomerType.Phyisical;
 
 
-
-Customer newCustomer = new();
-newCustomer.Id = 11;
-newCustomer.Name = "Irakli";
-newCustomer.PhoneNumber = "555337844";
-newCustomer.IdentityNumber = "01025277441";
-newCustomer.Email = "irakli@gmail.com";
-newCustomer.CustomerType = CustomerType.Phyisical;
-
-
-CustomerCsvRepository customerCsvRepository = new();
-customerCsvRepository.Remove(11);
+//CustomerCsvRepository customerCsvRepository = new();
+//customerCsvRepository.Remove(7);
 
 
 
@@ -46,5 +40,4 @@ customerCsvRepository.Remove(11);
 //newAccount3.CustomerId = 11;
 //newAccount3.Name = string.Empty;
 
-
-
+Console.WriteLine();

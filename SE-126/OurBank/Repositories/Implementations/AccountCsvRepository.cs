@@ -40,11 +40,6 @@ namespace OurBank.Repositories.Implementations
 
         public Account Get(int id) => _accounts.FirstOrDefault(x => x.Id == id);
 
-        public void Remove(Account model)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Remove(int id)
         {
             try
@@ -84,6 +79,30 @@ namespace OurBank.Repositories.Implementations
                 .ToList();
         }
         private string GetFileHeader() => File.ReadAllLines(_filePath)[0];
+
+        public void RemoveRange(Customer model)
+        {
+            try
+            {
+                List<Account> allAccountsToRemove = _accounts.Where(account => account.CustomerId == model.Id).ToList();
+                if (allAccountsToRemove.Count != 0)
+                {
+                    foreach (var accountToRemove in allAccountsToRemove)
+                    {
+                        _accounts.Remove(accountToRemove);
+                        SaveChanges();
+                    }
+                }
+                else
+                {
+                    throw new AccountNotFoundException("Accounts to remove don't exist");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 
 
