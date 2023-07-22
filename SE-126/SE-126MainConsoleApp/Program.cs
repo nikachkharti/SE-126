@@ -1083,3 +1083,66 @@ using System.Text.Json;
 Console.WriteLine();
 
 #endregion
+
+
+
+
+
+
+
+
+
+//List<Car> cars = new();
+//using (StreamReader reader = new(@"../../../vehicles.csv"))
+//{
+//    try
+//    {
+//        while (!reader.EndOfStream)
+//        {
+//            string line = reader.ReadLine();
+//            cars.Add(Car.Parse(line));
+//        }
+//    }
+//    catch (Exception ex)
+//    {
+//        Console.WriteLine(ex.Message);
+//    }
+//}
+
+
+//using (StreamWriter writer = new(@"../../../test.txt", true))
+//{
+//    try
+//    {
+//        writer.WriteLine($"Hello World 2");
+//    }
+//    catch (Exception ex)
+//    {
+//        Console.WriteLine(ex.Message);
+//    }
+//}
+
+
+
+//try
+//{
+//    while (!reader.EndOfStream)
+//    {
+//        string line = reader.ReadLine();
+//        cars.Add(Car.Parse(line));
+//    }
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine(ex.Message);
+//}
+//finally
+//{
+//    reader.Close();
+//    reader.Dispose();
+//}
+
+
+
+Console.ReadKey();
+
