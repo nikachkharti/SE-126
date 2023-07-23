@@ -1,1 +1,124 @@
 ﻿
+----------------------------------------------------1 ლექცია----------------------------------------------------
+
+
+
+--ათწილადი
+
+--float --- REAL
+--double --- FLOAT
+
+--decimal --- MONEY
+--decimal --- SMALLMONEY
+--decimal --- NUMERIC
+
+--DECIMAL(5,2) --> 5 იანი გამოხატავს 15.000
+
+
+-- ტექსტი
+
+--char
+--string
+
+
+--CHAR(10) --- არ ახდენს ოპტიმიზაციას , ვერ აღიქვამს უნიკოდს.
+--NCHAR(10) --- არ ახდენს ოპტიმიზაციას , აღიქვამს უნიკოდს.
+--VARCHAR(10) --- ახდენს ოპტიმიზაციას, ვერ აღიქვამს უნიკოდს.
+--NVARCHAR(10) --- ახდენს ოპტიმიზციას, აღიქვამს უნიკოდს.
+
+
+--Boolean --> BIT
+
+--true
+--false
+
+--1
+--0
+
+
+
+--მთელი რიცხვები
+
+--byte --> TINYINT
+--short --> SMALLINT
+--int --> INT
+--long --> BIGINT
+
+
+--თარიღები და დრო
+
+--DateTime
+
+--DATETIME - 1995-12-04 12:00:00:00  [1753-01-01] [9999-12-31]
+--DATE 1995-12-04 
+--TIME 12:00:00:00
+
+--DATETIME2 - 1995-12-04 12:00:00:00 [0001-01-01] [9999-12-31]
+
+
+
+--JSON XML IMAGE GEOGRAPHY
+
+
+
+
+
+
+--CREATE TABLE Students
+--(
+--	Id INT PRIMARY KEY IDENTITY,
+--	FirstName NVARCHAR(30) NOT NULL,
+--	LastName NVARCHAR(30) NOT NULL,
+--	DateOfBirth DATETIME NULL,
+--	Email VARCHAR(50) NULL,
+--	PhoneNumber CHAR(9) NULL,
+--	GroupId CHAR(6) DEFAULT('SE-126')
+--)
+--GO
+
+
+--INSERT INTO Students(FirstName,LastName,DateOfBirth,Email,PhoneNumber)
+--VALUES
+--(N'ნიკა',N'ჩხარტიშვილი',NULL,NULL,NULL),
+--(N'გიორგი',N'მენთეშაშვილი',NULL,NULL,NULL),
+--(N'ლადო',N'კოპტონაშვილი',NULL,NULL,NULL),
+--(N'სესილი',N'ჯიქიძე',NULL,NULL,NULL),
+--(N'სოსო',N'ქადაგიშვილი',NULL,NULL,NULL)
+--GO
+
+
+
+
+--SELECT
+--	Id,
+--	FirstName,
+--	LastName,
+--	DateOfBirth,
+--	Email,
+--	PhoneNumber,
+--	GroupId
+--FROM Students
+
+
+
+
+
+--DELETE Students
+--WHERE Id = 3
+
+
+--DROP TABLE Students
+
+
+
+--UPDATE Students
+--SET 
+--	DateOfBirth = '2000-12-21',
+--	Email = 'lado@gmail.com',
+--	PhoneNumber = '555337661'
+--WHERE 
+--	Id = 3
+
+
+
+
