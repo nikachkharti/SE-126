@@ -1,0 +1,41 @@
+﻿CREATE PROCEDURE sp_getAllCountries
+AS
+BEGIN
+	SELECT
+	  [CountryID],
+      [Country]
+	FROM [Movies].[dbo].[Country]
+END
+
+
+
+CREATE PROCEDURE sp_addCountry
+@countryName NVARCHAR(255)
+AS
+BEGIN
+	INSERT INTO Country (Country)
+	VALUES(@countryName)
+END
+
+
+CREATE PROCEDURE [dbo].[sp_getSingleCountry]
+@id INT
+AS
+BEGIN
+	SELECT
+	  [CountryID],
+      [Country]
+	FROM [Movies].[dbo].[Country]
+	WHERE CountryID = @id
+END
+
+CREATE PROCEDURE sp_getAllStudios
+AS
+BEGIN
+	SELECT
+		StudioID,
+		Studio
+	FROM Studio
+END
+
+
