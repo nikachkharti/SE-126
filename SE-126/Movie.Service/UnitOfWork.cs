@@ -4,11 +4,11 @@ namespace Movie.Service
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public ICountryRepository Country { get; private set; }
+        public ICountryService Country { get; private set; }
 
         public UnitOfWork()
         {
-            Country = new CountryRepository();
+            Country = new CountryService();
         }
     }
 }

@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Movie.Models\Movie.Models.csproj" />
+    <ProjectReference Include="..\Movie.Repository\Movie.Repository.csproj" />
   </ItemGroup>
 
 </Project>

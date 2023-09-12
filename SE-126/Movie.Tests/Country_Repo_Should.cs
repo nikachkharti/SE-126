@@ -28,12 +28,28 @@ namespace Movie.Tests
 
 
         [Fact]
-        public void Get_Single_Country()
+        public async void Get_Single_Country()
         {
-            var actual = _unitOfWork.Country.GetCountry(118);
+            var actual = await _unitOfWork.Country.GetCountry(118);
             var expected = new Country { CountryId = 118, Name = "Japan" };
 
-            Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual, new CountryEquilityComparer());
+        }
+
+        [Fact]
+        public void Delete_Country()
+        {
+            _unitOfWork.Country.DeleteCountry(638);
+        }
+
+        [Fact]
+        public async void Update_Country()
+        {
+            Country countryToUpdate = await _unitOfWork.Country.GetCountry(640);
+            countryToUpdate.Name = "Test country2";
+
+            await _unitOfWork.Country.UpdateCountry(countryToUpdate);
+
         }
     }
 }

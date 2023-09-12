@@ -5,9 +5,9 @@ using System.Data;
 
 namespace Movie.Service
 {
-    public class CountryRepository : ICountryRepository
+    public class CountryService : ICountryService
     {
-        public void AddCountry(Country country)
+        public async Task AddCountry(Country country)
         {
             const string sqlExpression = "sp_addCountry";
 
@@ -20,7 +20,7 @@ namespace Movie.Service
 
                     command.Parameters.AddWithValue("countryName", country.Name);
 
-                    connection.Open();
+                    await connection.OpenAsync();
                     command.ExecuteNonQuery();
                 }
                 catch (Exception)
@@ -29,18 +29,41 @@ namespace Movie.Service
                 }
                 finally
                 {
-                    connection.CloseAsync();
+                    await connection.CloseAsync();
                 }
             }
 
         }
 
-        public void DeleteCountry(int id)
+        public async Task DeleteCountry(int id)
         {
-            throw new NotImplementedException();
+            const string sqlExpression = "sp_deleteCountry";
+
+            using (SqlConnection connection = new(HelperConfig.ConnectionString))
+            {
+                try
+                {
+                    SqlCommand command = new(sqlExpression, connection);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("countryId", id);
+
+                    await connection.OpenAsync();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    await connection.CloseAsync();
+                }
+            }
+
         }
 
-        public List<Country> GetAllCountries()
+        public async Task<List<Country>> GetAllCountries()
         {
             List<Country> result = new();
             const string sqlExpression = "sp_getAllCountries";
@@ -52,12 +75,12 @@ namespace Movie.Service
                     SqlCommand command = new(sqlExpression, connection);
                     command.CommandType = CommandType.StoredProcedure;
 
-                    connection.Open();
+                    await connection.OpenAsync();
                     SqlDataReader reader = command.ExecuteReader();
 
                     if (reader.HasRows)
                     {
-                        while (reader.Read())
+                        while (await reader.ReadAsync())
                         {
                             result.Add(new Country
                             {
@@ -73,7 +96,7 @@ namespace Movie.Service
                 }
                 finally
                 {
-                    connection.Close();
+                    await connection.CloseAsync();
                 }
 
                 return result;
@@ -81,8 +104,7 @@ namespace Movie.Service
 
         }
 
-
-        public Country GetCountry(int id)
+        public async Task<Country> GetCountry(int id)
         {
             Country result = new();
             const string sqlExpression = "sp_getSingleCountry";
@@ -96,12 +118,12 @@ namespace Movie.Service
 
                     command.Parameters.AddWithValue("id", id);
 
-                    connection.Open();
+                    await connection.OpenAsync();
                     SqlDataReader reader = command.ExecuteReader();
 
                     if (reader.HasRows)
                     {
-                        while (reader.Read())
+                        while (await reader.ReadAsync())
                         {
                             result.CountryId = reader.GetInt32(0);
                             result.Name = reader.GetString(1);
@@ -114,16 +136,39 @@ namespace Movie.Service
                 }
                 finally
                 {
-                    connection.Close();
+                    await connection.CloseAsync();
                 }
 
                 return result;
             }
         }
 
-        public void UpdateCountry(Country country)
+        public async Task UpdateCountry(Country country)
         {
-            throw new NotImplementedException();
+            const string sqlExpression = "sp_updateCountry";
+
+            using (SqlConnection connection = new(HelperConfig.ConnectionString))
+            {
+                try
+                {
+                    SqlCommand command = new(sqlExpression, connection);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("countryId", country.CountryId);
+                    command.Parameters.AddWithValue("countryName", country.Name);
+
+                    await connection.OpenAsync();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    await connection.CloseAsync();
+                }
+            }
         }
     }
 }

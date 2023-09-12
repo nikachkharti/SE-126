@@ -39,3 +39,21 @@ BEGIN
 END
 
 
+CREATE PROCEDURE sp_updateCountry
+@countryId INT,
+@countryName NVARCHAR(255)
+AS
+BEGIN
+	UPDATE Country
+	SET Country = @countryName
+	WHERE CountryID = @countryId
+END
+
+CREATE PROCEDURE [dbo].[sp_deleteCountry]
+@countryId INT
+AS
+BEGIN
+	DELETE FROM
+	Country
+	WHERE CountryID = @countryId
+END

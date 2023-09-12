@@ -1,7 +1,9 @@
-﻿namespace Movie.Service.Interfaces
+﻿using Movie.Repository;
+
+namespace Movie.Service.Interfaces
 {
     public interface IUnitOfWork
     {
-        public ICountryRepository Country { get; }
+        public ICountryService Country { get; }
     }
 }
