@@ -22,8 +22,8 @@ namespace Movie.Service
 
                     command.Parameters.AddWithValue("firstName", director.FirstName);
                     command.Parameters.AddWithValue("familyName", director.FamilyName);
-                    command.Parameters.AddWithValue("dob", director.DateOfBirth);
-                    command.Parameters.AddWithValue("dod", director.DateOfDeath);
+                    command.Parameters.AddWithValue("dob", director.DateOfBirth.HasValue ? director.DateOfBirth : DBNull.Value);
+                    command.Parameters.AddWithValue("dod", director.DateOfDeath.HasValue ? director.DateOfDeath : DBNull.Value);
                     command.Parameters.AddWithValue("gender", director.Gender);
 
                     await connection.OpenAsync();
@@ -172,8 +172,8 @@ namespace Movie.Service
                     command.Parameters.AddWithValue("id", director.DirectorId);
                     command.Parameters.AddWithValue("firstName", director.FirstName);
                     command.Parameters.AddWithValue("familyName", director.FamilyName);
-                    command.Parameters.AddWithValue("dob", director.DateOfBirth);
-                    command.Parameters.AddWithValue("dod", director.DateOfDeath);
+                    command.Parameters.AddWithValue("dob", director.DateOfBirth.HasValue ? director.DateOfBirth : DBNull.Value);
+                    command.Parameters.AddWithValue("dod", director.DateOfDeath.HasValue ? director.DateOfDeath : DBNull.Value);
                     command.Parameters.AddWithValue("gender", director.Gender);
 
                     await connection.OpenAsync();
