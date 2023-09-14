@@ -57,3 +57,79 @@ BEGIN
 	Country
 	WHERE CountryID = @countryId
 END
+
+
+
+CREATE PROCEDURE sp_getSingleDirector
+@id INT
+AS
+BEGIN
+SELECT
+	   [DirectorID]
+      ,[FirstName]
+      ,[FamilyName]
+      ,[FullName]
+      ,[DoB]
+      ,[DoD]
+      ,[Gender]
+  FROM [Movies].[dbo].[Director]
+  WHERE DirectorID = @id
+END
+
+
+
+CREATE PROCEDURE sp_getAllDirectors
+AS
+BEGIN
+SELECT
+	   [DirectorID]
+      ,[FirstName]
+      ,[FamilyName]
+      ,[FullName]
+      ,[DoB]
+      ,[DoD]
+      ,[Gender]
+  FROM [Movies].[dbo].[Director]
+END
+
+
+CREATE PROCEDURE sp_addDirector
+@firstName NVARCHAR(100),
+@familyName NVARCHAR(100),
+@dob DATETIME,
+@dod DATETIME,
+@gender NVARCHAR(20)
+AS
+BEGIN
+	INSERT INTO Director(FirstName,FamilyName,DoB,DoD,Gender)
+	VALUES(@firstName,@familyName,@dob,@dod,@gender)
+END
+
+
+CREATE PROCEDURE sp_updateDirector
+@id INT,
+@firstName NVARCHAR(100),
+@familyName NVARCHAR(100),
+@dob DATETIME,
+@dod DATETIME,
+@gender NVARCHAR(20)
+AS
+BEGIN
+	UPDATE Director
+	SET
+		FirstName = @firstName,
+		FamilyName = @familyName,
+		DoB = @dob,
+		DoD = @dod,
+		Gender = @gender
+	WHERE DirectorID = @id
+END
+
+
+CREATE PROCEDURE sp_deleteDirector
+@id INT
+AS
+BEGIN
+	DELETE Director
+	WHERE DirectorID = @id
+END
