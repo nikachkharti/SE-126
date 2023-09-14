@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Movie.Models;
+using Movie.Repository;
 using Movie.Service.Interfaces;
 using System.Data;
 using System.Diagnostics.Metrics;

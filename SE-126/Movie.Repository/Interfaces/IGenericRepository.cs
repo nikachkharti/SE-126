@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Movie.Repository
+﻿namespace Movie.Repository
 {
-    public interface IGenericRepository<T>
+    public interface IGenericRepository<T> where T : class, new()
     {
-        Task<List<T>> GetAll();
-        T GetById(int id);
-        Task Add();
-        Task Update(T item);
-        Task Delete(int id);
+        Task<List<T>> GETAllAsync(string procedureName);
     }
 }

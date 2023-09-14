@@ -1,4 +1,4 @@
-﻿namespace Movie.Service
+﻿namespace Movie.Repository
 {
     public static class HelperConfig
     {

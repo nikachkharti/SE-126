@@ -11,9 +11,9 @@ namespace Movie.Tests
         }
 
         [Fact]
-        public void Get_All_Countries()
+        public async void Get_All_Countries()
         {
-            var allCountries = _unitOfWork.Country.GetAllCountries();
+            var allCountries = await _unitOfWork.Country.GetAllCountries();
         }
 
 

@@ -9,5 +9,9 @@ namespace Movie.Service.Interfaces
         Task<Country> GetCountry(int id);
         Task DeleteCountry(int id);
         Task UpdateCountry(Country country);
+
+
+
+
     }
 }

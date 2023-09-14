@@ -1,30 +1,56 @@
-﻿namespace Movie.Repository
+﻿using Microsoft.Data.SqlClient;
+using System.Data;
+
+namespace Movie.Repository
 {
-    public class GenericRepository<T> : IGenericRepository<T>
+    public class GenericRepository<T> : IGenericRepository<T> where T : class, new()
     {
-        public Task Add()
+        public async Task<List<T>> GETAllAsync(string procedureName)
         {
-            throw new NotImplementedException();
-        }
+            List<T> result = new();
 
-        public Task Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
+            using (SqlConnection connection = new(HelperConfig.ConnectionString))
+            {
+                try
+                {
+                    SqlCommand command = new(procedureName, connection);
+                    command.CommandType = CommandType.StoredProcedure;
 
-        public Task<List<T>> GetAll()
-        {
-            throw new NotImplementedException();
-        }
 
-        public T GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+                    await connection.OpenAsync();
+                    var reader = await command.ExecuteReaderAsync();
 
-        public Task Update(T item)
-        {
-            throw new NotImplementedException();
+                    if (reader.HasRows)
+                    {
+                        var properties = typeof(T).GetProperties();
+
+                        while (await reader.ReadAsync())
+                        {
+                            T item = new();
+
+                            foreach (var property in properties)
+                            {
+                                var value = reader[property.Name];
+                                property.SetValue(item, value);
+                            }
+
+                            result.Add(item);
+                        }
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    await connection.CloseAsync();
+                }
+            }
+
+            return result;
         }
     }
 }
