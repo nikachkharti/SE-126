@@ -18,11 +18,11 @@ namespace Movie.Tests
 
 
         [Fact]
-        public void Add_New_Country()
+        public async void Add_New_Country()
         {
-            _unitOfWork.Country.AddCountry(new CountryModel
+            await _unitOfWork.Country.AddCountry(new CountryModel
             {
-                Country = "Test Country"
+                Country = "Test Country2"
             });
         }
 
@@ -34,9 +34,9 @@ namespace Movie.Tests
         }
 
         [Fact]
-        public void Delete_Country()
+        public async void Delete_Country()
         {
-            _unitOfWork.Country.DeleteCountry(638);
+            await _unitOfWork.Country.DeleteCountry(639);
         }
 
         [Fact]

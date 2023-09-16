@@ -3,19 +3,20 @@ using Movie.Models;
 using Movie.Repository;
 using Movie.Service.Interfaces;
 using System.Data;
+using System.Diagnostics.Metrics;
 
 namespace Movie.Service
 {
     public class CountryService : GenericRepository<CountryModel>, ICountryService
     {
-        public Task AddCountry(CountryModel country)
+        public async Task AddCountry(CountryModel country)
         {
-            throw new NotImplementedException();
+            await POSTProcedure("sp_addCountry", country.Country);
         }
 
-        public Task DeleteCountry(int id)
+        public async Task DeleteCountry(int id)
         {
-            throw new NotImplementedException();
+            await POSTQuery($"DELETE FROM Country WHERE CountryId = ${id}");
         }
 
         public async Task<List<CountryModel>> GetAllCountries()

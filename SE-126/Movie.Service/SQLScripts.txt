@@ -10,23 +10,23 @@ END
 
 
 CREATE PROCEDURE sp_addCountry
-@countryName NVARCHAR(255)
+@param0 NVARCHAR(255)
 AS
 BEGIN
 	INSERT INTO Country (Country)
-	VALUES(@countryName)
+	VALUES(@param0)
 END
 
 
 CREATE PROCEDURE [dbo].[sp_getSingleCountry]
-@id INT
+@param0 INT
 AS
 BEGIN
 	SELECT
 	  [CountryID],
       [Country]
 	FROM [Movies].[dbo].[Country]
-	WHERE CountryID = @id
+	WHERE CountryID = @param0
 END
 
 CREATE PROCEDURE sp_getAllStudios
@@ -40,28 +40,28 @@ END
 
 
 CREATE PROCEDURE sp_updateCountry
-@countryId INT,
-@countryName NVARCHAR(255)
+@param0 INT,
+@param1 NVARCHAR(255)
 AS
 BEGIN
 	UPDATE Country
-	SET Country = @countryName
-	WHERE CountryID = @countryId
+	SET Country = @param1
+	WHERE CountryID = @param0
 END
 
 CREATE PROCEDURE [dbo].[sp_deleteCountry]
-@countryId INT
+@param0 INT
 AS
 BEGIN
 	DELETE FROM
 	Country
-	WHERE CountryID = @countryId
+	WHERE CountryID = @param0
 END
 
 
 
 CREATE PROCEDURE sp_getSingleDirector
-@id INT
+@param0 INT
 AS
 BEGIN
 SELECT
@@ -73,7 +73,7 @@ SELECT
       ,[DoD]
       ,[Gender]
   FROM [Movies].[dbo].[Director]
-  WHERE DirectorID = @id
+  WHERE DirectorID = @param0
 END
 
 
@@ -94,42 +94,42 @@ END
 
 
 CREATE PROCEDURE sp_addDirector
-@firstName NVARCHAR(100),
-@familyName NVARCHAR(100),
-@dob DATETIME,
-@dod DATETIME,
-@gender NVARCHAR(20)
+@param0 NVARCHAR(100),
+@param1 NVARCHAR(100),
+@param2 DATETIME,
+@param3 DATETIME,
+@param4 NVARCHAR(20)
 AS
 BEGIN
 	INSERT INTO Director(FirstName,FamilyName,DoB,DoD,Gender)
-	VALUES(@firstName,@familyName,@dob,@dod,@gender)
+	VALUES(@param0,@param1,@param2,@param3,@param4)
 END
 
 
 CREATE PROCEDURE sp_updateDirector
-@id INT,
-@firstName NVARCHAR(100),
-@familyName NVARCHAR(100),
-@dob DATETIME,
-@dod DATETIME,
-@gender NVARCHAR(20)
+@param0 INT,
+@param1 NVARCHAR(100),
+@param2 NVARCHAR(100),
+@param3 DATETIME,
+@param4 DATETIME,
+@param5 NVARCHAR(20)
 AS
 BEGIN
 	UPDATE Director
 	SET
-		FirstName = @firstName,
-		FamilyName = @familyName,
-		DoB = @dob,
-		DoD = @dod,
-		Gender = @gender
-	WHERE DirectorID = @id
+		FirstName = @param1,
+		FamilyName = @param2,
+		DoB = @param3,
+		DoD = @param4,
+		Gender = @param5
+	WHERE DirectorID = @param0
 END
 
 
 CREATE PROCEDURE sp_deleteDirector
-@id INT
+@param0 INT
 AS
 BEGIN
 	DELETE Director
-	WHERE DirectorID = @id
+	WHERE DirectorID = @param0
 END

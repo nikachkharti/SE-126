@@ -7,6 +7,11 @@ namespace Movie.Repository
     {
         public async Task<List<T>> GETAllAsyncProcedure(string procedureName, params object[] parameters)
         {
+            if (string.IsNullOrWhiteSpace(procedureName))
+            {
+                throw new ArgumentException($"'{nameof(procedureName)}' cannot be null or whitespace.", nameof(procedureName));
+            }
+
             List<T> result = new();
 
             using (SqlConnection connection = new(HelperConfig.ConnectionString))
@@ -62,6 +67,11 @@ namespace Movie.Repository
         }
         public async Task<List<T>> GETAllAsyncQuery(string query)
         {
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                throw new ArgumentException($"'{nameof(query)}' cannot be null or whitespace.", nameof(query));
+            }
+
             List<T> result = new();
 
             using (SqlConnection connection = new(HelperConfig.ConnectionString))
@@ -110,6 +120,11 @@ namespace Movie.Repository
 
         public async Task<T> GETSingleAsyncProcedure(string procedure, params object[] parameters)
         {
+            if (string.IsNullOrWhiteSpace(procedure))
+            {
+                throw new ArgumentException($"'{nameof(procedure)}' cannot be null or whitespace.", nameof(procedure));
+            }
+
             T result = new();
 
             using (SqlConnection connection = new(HelperConfig.ConnectionString))
@@ -163,6 +178,11 @@ namespace Movie.Repository
 
         public async Task<T> GETSingleAsyncQuery(string query)
         {
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                throw new ArgumentException($"'{nameof(query)}' cannot be null or whitespace.", nameof(query));
+            }
+
             T result = new();
 
             using (SqlConnection connection = new(HelperConfig.ConnectionString))
@@ -205,14 +225,72 @@ namespace Movie.Repository
             return result;
         }
 
-        public Task<T> POSTProcedure(string procedure, params object[] parameters)
+        public async Task POSTProcedure(string procedure, params object[] parameters)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(procedure))
+            {
+                throw new ArgumentException($"'{nameof(procedure)}' cannot be null or whitespace.", nameof(procedure));
+            }
+
+            using (SqlConnection connection = new(HelperConfig.ConnectionString))
+            {
+                try
+                {
+                    SqlCommand command = new(procedure, connection);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    if (parameters.Length != 0)
+                    {
+                        for (int i = 0; i < parameters.Length; i++)
+                        {
+                            string parameterName = $"param{i}";
+                            command.Parameters.AddWithValue(parameterName, parameters[i]);
+                        }
+                    }
+
+                    await connection.OpenAsync();
+                    await command.ExecuteNonQueryAsync();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    await connection.CloseAsync();
+                }
+            }
+
         }
 
-        public Task<T> POSTQuery(string query)
+        public async Task POSTQuery(string query)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                throw new ArgumentException($"'{nameof(query)}' cannot be null or whitespace.", nameof(query));
+            }
+
+            using (SqlConnection connection = new(HelperConfig.ConnectionString))
+            {
+                try
+                {
+                    SqlCommand command = new(query, connection);
+                    command.CommandType = CommandType.Text;
+
+                    await connection.OpenAsync();
+                    await command.ExecuteNonQueryAsync();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    await connection.CloseAsync();
+                }
+            }
+
+
         }
     }
 }
