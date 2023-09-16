@@ -4,11 +4,11 @@ namespace Movie.Service.Interfaces
 {
     public interface ICountryService
     {
-        Task<List<Country>> GetAllCountries();
-        Task AddCountry(Country country);
-        Task<Country> GetCountry(int id);
+        Task<List<CountryModel>> GetAllCountries();
+        Task AddCountry(CountryModel country);
+        Task<CountryModel> GetCountry(int id);
         Task DeleteCountry(int id);
-        Task UpdateCountry(Country country);
+        Task UpdateCountry(CountryModel country);
 
 
 

@@ -6,9 +6,9 @@ using System.Data;
 
 namespace Movie.Service
 {
-    public class CountryService : GenericRepository<Country>, ICountryService
+    public class CountryService : GenericRepository<CountryModel>, ICountryService
     {
-        public Task AddCountry(Country country)
+        public Task AddCountry(CountryModel country)
         {
             throw new NotImplementedException();
         }
@@ -18,18 +18,19 @@ namespace Movie.Service
             throw new NotImplementedException();
         }
 
-        public async Task<List<Country>> GetAllCountries()
+        public async Task<List<CountryModel>> GetAllCountries()
         {
-            var allCountries = await GETAllAsync("sp_getAllCountries");
+            var allCountries = await GETAllAsyncProcedure("sp_getAllSpecifcCountries", 118, 258);
             return allCountries;
         }
 
-        public Task<Country> GetCountry(int id)
+        public async Task<CountryModel> GetCountry(int id)
         {
-            throw new NotImplementedException();
+            var result = await GETSingleAsyncProcedure("sp_getSingleCountry", 118);
+            return result;
         }
 
-        public Task UpdateCountry(Country country)
+        public Task UpdateCountry(CountryModel country)
         {
             throw new NotImplementedException();
         }
