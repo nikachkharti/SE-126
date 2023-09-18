@@ -6,5 +6,6 @@ namespace Movie.Service.Interfaces
     {
         public ICountryService Country { get; }
         public IDirectorService Director { get; }
+        public ILanguageService Language { get; }
     }
 }

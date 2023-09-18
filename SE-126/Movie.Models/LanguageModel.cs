@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Movie.Models
 {
-    internal class LanguageModel
+    public class LanguageModel
     {
+        public int LanguageId { get; set; }
+        public string Language { get; set; }
     }
 }

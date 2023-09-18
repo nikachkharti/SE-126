@@ -1,4 +1,6 @@
-﻿CREATE PROCEDURE sp_getAllCountries
+﻿//Country
+
+CREATE PROCEDURE sp_getAllCountries
 AS
 BEGIN
 	SELECT
@@ -58,7 +60,7 @@ BEGIN
 	WHERE CountryID = @param0
 END
 
-
+//Director
 
 CREATE PROCEDURE sp_getSingleDirector
 @param0 INT
@@ -133,3 +135,56 @@ BEGIN
 	DELETE Director
 	WHERE DirectorID = @param0
 END
+
+//Language
+
+CREATE PROCEDURE sp_getAllLanguages
+AS
+BEGIN
+	SELECT
+	  [LanguageID],
+      [Language]
+	FROM [Movies].[dbo].[Language]
+END
+
+
+
+CREATE PROCEDURE sp_addLanguage
+@param0 NVARCHAR(255)
+AS
+BEGIN
+	INSERT INTO Language (Language)
+	VALUES(@param0)
+END
+
+
+CREATE PROCEDURE [dbo].[sp_getSingleLanguage]
+@param0 INT
+AS
+BEGIN
+	SELECT
+	  [LanguageID],
+      [Language]
+	FROM [Movies].[dbo].[Language]
+	WHERE LanguageID = @param0
+END
+
+CREATE PROCEDURE sp_updateLanguage
+@param0 INT,
+@param1 NVARCHAR(255)
+AS
+BEGIN
+	UPDATE Language
+	SET Language = @param1
+	WHERE LanguageID = @param0
+END
+
+CREATE PROCEDURE [dbo].[sp_deleteLanguage]
+@param0 INT
+AS
+BEGIN
+	DELETE FROM
+	Language
+	WHERE LanguageID = @param0
+END
+
