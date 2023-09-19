@@ -21,13 +21,13 @@ namespace Movie.Service
 
         public async Task<List<CountryModel>> GetAllCountries()
         {
-            var allCountries = await GETAllAsyncProcedure("sp_getAllSpecifcCountries", 118, 258);
+            var allCountries = await GETAllAsyncProcedure("sp_getAllCountries");
             return allCountries;
         }
 
         public async Task<CountryModel> GetCountry(int id)
         {
-            var result = await GETSingleAsyncProcedure("sp_getSingleCountry", 118);
+            var result = await GETSingleAsyncProcedure("sp_getSingleCountry", id);
             return result;
         }
 

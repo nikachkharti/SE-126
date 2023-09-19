@@ -5,16 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Movie.App"
         mc:Ignorable="d"
-        Title="მთავარი" Height="500" Width="1000" WindowStartupLocation="CenterScreen" Background="#FFF">
-    <StackPanel>
-        <TextBlock x:Name="headerLabelContainer" Margin="12" HorizontalAlignment="Center">
-            <Label x:Name="headerLabel" FontSize="20" FontWeight="SemiBold" FontFamily="FiraGO" Foreground="Goldenrod">ქვეყნების ჩამონათვალი</Label>
-        </TextBlock>
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid Margin="12">
 
-        <StackPanel x:Name="notificationBtnContainer" Width="250">
-            <Button x:Name="notificatioBtn" Cursor="Hand" Padding="12" FontSize="15" Click="notificatioBtn_Click">მაჩვენე შეტყობინება</Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Button x:Name="DeleteBtn" Background="Crimson" Foreground="White" Width="70" Cursor="Hand" Click="DeleteBtn_Click">წაშლა</Button>
         </StackPanel>
+        
+        <ListBox Cursor="Hand" x:Name="CountryList" Grid.Row="1" Grid.Column="0" SelectionChanged="CountryList_SelectionChanged"></ListBox>
 
-
-    </StackPanel>
+    </Grid>
 </Window>

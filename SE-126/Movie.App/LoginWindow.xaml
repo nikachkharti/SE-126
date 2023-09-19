@@ -1,0 +1,48 @@
+﻿<Window x:Class="Movie.App.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Movie.App"
+        mc:Ignorable="d"
+        Title="ავტორიზაცია" Height="400" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="HeaderLabelContainer" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+            <Label x:Name="HeaderLabel" FontSize="28" FontWeight="Light" Foreground="OrangeRed" Margin="0 10 0 0">ავტორიზაცია</Label>
+        </TextBlock>
+
+        <StackPanel x:Name="FirstNameInputContainer" Grid.Row="1" Grid.Column="0">
+            <TextBlock x:Name="FirstNameLabelContainer">
+                <Label Name="FirstNameLabel">სახელი</Label>
+            </TextBlock>
+            <TextBox x:Name="FirstNameValue" FontSize="18" Padding="5"></TextBox>
+        </StackPanel>
+
+        <StackPanel x:Name="PasswordInputContainer" Grid.Row="2" Grid.Column="0">
+            
+            
+            <TextBlock x:Name="PasswordLabelContainer">
+                <Label Name="PasswordLabel">პაროლი</Label>
+            </TextBlock>
+            <PasswordBox x:Name="PasswordValue" FontSize="18" Padding="5"></PasswordBox>
+            
+        </StackPanel>
+        
+        
+
+        <StackPanel x:Name="LoginButtonContainer" Grid.Row="3" Grid.Column="0" VerticalAlignment="Bottom">
+            <Button Name="LoginBtn" Cursor="Hand" FontSize="15" BorderThickness="0" Background="Crimson" Foreground="#FFF" Padding="12" Click="LoginBtn_Click">ავტორიზაცია</Button>
+        </StackPanel>
+    </Grid>
+</Window>

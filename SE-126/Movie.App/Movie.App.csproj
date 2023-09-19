@@ -7,4 +7,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Movie.Models\Movie.Models.csproj" />
+    <ProjectReference Include="..\Movie.Service\Movie.Service.csproj" />
+  </ItemGroup>
+
 </Project>
