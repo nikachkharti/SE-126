@@ -4,10 +4,10 @@ namespace Movie.Service.Interfaces
 {
     public interface IDirectorService
     {
-        Task<List<Director>> GetAllDirectors();
-        Task AddDirector(Director director);
-        Task<Director> GetDirector(int id);
+        Task<List<DirectorModel>> GetAllDirectors();
+        Task AddDirector(DirectorModel director);
+        Task<DirectorModel> GetDirector(int id);
         Task DeleteDirector(int id);
-        Task UpdateDirector(Director director);
+        Task UpdateDirector(DirectorModel director);
     }
 }

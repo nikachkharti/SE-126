@@ -25,16 +25,15 @@ namespace Movie.Tests
         }
 
 
-        //TODO მოსაგვარებელია Dod null
         [Fact]
         public async void Add_New_Director()
         {
-            Director newDirector = new()
+            DirectorModel newDirector = new()
             {
                 FirstName = "Nika",
                 FamilyName = "Chkhartishivli",
-                DateOfBirth = new DateTime(1995, 04, 06),
-                DateOfDeath = null,
+                DoB = new DateTime(1995, 04, 06),
+                DoD = new DateTime(2020, 04, 06),
                 Gender = "Male"
             };
 

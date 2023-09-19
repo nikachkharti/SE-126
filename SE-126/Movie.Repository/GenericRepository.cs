@@ -43,8 +43,11 @@ namespace Movie.Repository
 
                             foreach (var property in properties)
                             {
-                                var value = reader[property.Name];
-                                property.SetValue(item, value);
+                                if (!reader.IsDBNull(reader.GetOrdinal(property.Name)))
+                                {
+                                    var value = reader[property.Name];
+                                    property.SetValue(item, value);
+                                }
                             }
 
                             result.Add(item);
@@ -95,8 +98,11 @@ namespace Movie.Repository
 
                             foreach (var property in properties)
                             {
-                                var value = reader[property.Name];
-                                property.SetValue(item, value);
+                                if (!reader.IsDBNull(reader.GetOrdinal(property.Name)))
+                                {
+                                    var value = reader[property.Name];
+                                    property.SetValue(item, value);
+                                }
                             }
 
                             result.Add(item);
@@ -155,8 +161,11 @@ namespace Movie.Repository
                         {
                             foreach (var property in properties)
                             {
-                                var value = reader[property.Name];
-                                property.SetValue(result, value);
+                                if (!reader.IsDBNull(reader.GetOrdinal(property.Name)))
+                                {
+                                    var value = reader[property.Name];
+                                    property.SetValue(result, value);
+                                }
                             }
                         }
                     }
@@ -204,8 +213,11 @@ namespace Movie.Repository
                         {
                             foreach (var property in properties)
                             {
-                                var value = reader[property.Name];
-                                property.SetValue(result, value);
+                                if (!reader.IsDBNull(reader.GetOrdinal(property.Name)))
+                                {
+                                    var value = reader[property.Name];
+                                    property.SetValue(result, value);
+                                }
                             }
                         }
                     }
