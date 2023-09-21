@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Movie.App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -17,27 +17,36 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ListBox x:Name="CountryList" Grid.Row="0" Grid.Column="0"></ListBox>
+        <ListBox x:Name="CountryList" Grid.Row="0" Grid.Column="0" Cursor="Hand" SelectionChanged="CountryList_SelectionChanged"></ListBox>
 
         <StackPanel Grid.Row="0" Grid.Column="1" Margin="10">
 
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-            </Grid>
 
-            <StackPanel Grid.Row="0">
-                <Button>დამატება</Button>
-                <Button>წაშლა</Button>
-                <Button>რედაქტირება</Button>
-            </StackPanel>
-            
-            <StackPanel Grid.Row="1">
-                <Label x:Name="CountryLabel">ქვეყნის დასახელება</Label>
-                <TextBox x:Name="CountryValue" Padding="10" FontSize="16"></TextBox>
-            </StackPanel>
+                <TabPanel Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center">
+                    <Button x:Name="AddBtn" Padding="10" Background="ForestGreen" Foreground="White" Cursor="Hand" Click="AddBtn_Click">დამატება</Button>
+                    <Button x:Name="DeleteBtn" Padding="10" Background="Crimson" Foreground="White" Cursor="Hand" Click="DeleteBtn_Click">წაშლა</Button>
+                    <Button Name="UpdateBtn" Padding="10" Background="Goldenrod" Cursor="Hand" Height="38" VerticalAlignment="Center" Click="UpdateBtn_Click">რედაქტირება</Button>
+                </TabPanel>
+
+                <StackPanel Grid.Column="0" Grid.Row="1" Margin="0 30 0 0">
+                    <Label x:Name="CountryLabel">ქვეყნის დასახელება</Label>
+                    <TextBox x:Name="CountryValue" Padding="10" FontSize="16"></TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="0" Grid.Row="2" Margin="0 10 0 0">
+                    <Label x:Name="SearchLabel">ძებნა</Label>
+                    <TextBox x:Name="SearchValue" Padding="10" FontSize="16" TextChanged="SearchValue_TextChanged"></TextBox>
+                </StackPanel>
+            </Grid>
 
         </StackPanel>
 

@@ -31,9 +31,9 @@ namespace Movie.Service
             return result;
         }
 
-        public Task UpdateCountry(CountryModel country)
+        public async Task UpdateCountry(CountryModel country)
         {
-            throw new NotImplementedException();
+            await POSTProcedure("sp_updateCountry", country.CountryId, country.Country);
         }
     }
 
