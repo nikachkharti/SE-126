@@ -5,23 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Movie.App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
-    <Grid Margin="12">
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="0" Grid.Column="0">
-            <Button x:Name="DeleteBtn" Background="Crimson" Foreground="White" Width="70" Cursor="Hand" Click="DeleteBtn_Click">წაშლა</Button>
+        <ListBox x:Name="CountryList" Grid.Row="0" Grid.Column="0"></ListBox>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Margin="10">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+            </Grid>
+
+            <StackPanel Grid.Row="0">
+                <Button>დამატება</Button>
+                <Button>წაშლა</Button>
+                <Button>რედაქტირება</Button>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="1">
+                <Label x:Name="CountryLabel">ქვეყნის დასახელება</Label>
+                <TextBox x:Name="CountryValue" Padding="10" FontSize="16"></TextBox>
+            </StackPanel>
+
         </StackPanel>
-        
-        <ListBox Cursor="Hand" x:Name="CountryList" Grid.Row="1" Grid.Column="0" SelectionChanged="CountryList_SelectionChanged"></ListBox>
 
     </Grid>
 </Window>
