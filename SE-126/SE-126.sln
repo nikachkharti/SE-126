@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movie.Tests", "Movie.Tests\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movie.Repository", "Movie.Repository\Movie.Repository.csproj", "{EB1819E7-99CC-4B2C-8AC3-2FCCDA7D1E84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.App", "Movie.App\Movie.App.csproj", "{EBA0A1E7-B670-4667-8DE0-3C04D7609B44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movie.App", "Movie.App\Movie.App.csproj", "{EBA0A1E7-B670-4667-8DE0-3C04D7609B44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.Web", "Movie.Web\Movie.Web.csproj", "{48536DDE-E51B-4279-BBC0-BD77A70F633E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{EBA0A1E7-B670-4667-8DE0-3C04D7609B44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBA0A1E7-B670-4667-8DE0-3C04D7609B44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBA0A1E7-B670-4667-8DE0-3C04D7609B44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48536DDE-E51B-4279-BBC0-BD77A70F633E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48536DDE-E51B-4279-BBC0-BD77A70F633E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48536DDE-E51B-4279-BBC0-BD77A70F633E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48536DDE-E51B-4279-BBC0-BD77A70F633E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{B7C5C651-FBA9-46F3-BC9B-09BAC5E6AF7B} = {2DFAB6AF-E5BA-4D9C-A366-57198A5EA441}
 		{EB1819E7-99CC-4B2C-8AC3-2FCCDA7D1E84} = {2DFAB6AF-E5BA-4D9C-A366-57198A5EA441}
 		{EBA0A1E7-B670-4667-8DE0-3C04D7609B44} = {2DFAB6AF-E5BA-4D9C-A366-57198A5EA441}
+		{48536DDE-E51B-4279-BBC0-BD77A70F633E} = {2DFAB6AF-E5BA-4D9C-A366-57198A5EA441}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD1E2CE1-0E2E-47CA-83CA-BB1F9CAB0634}

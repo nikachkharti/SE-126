@@ -1,0 +1,38 @@
+﻿@model List<CountryModel>
+@{
+    ViewData["Title"] = "ქვეყნები";
+}
+
+<div class="row mt-5">
+    <a asp-controller="Home" asp-action="Create" class="btn btn-success w-25">ახალი ქვეყანა</a>
+</div>
+
+<div class="row mt-5">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>დასახელება</th>
+                <th>რდაქტირება</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var country in Model)
+            {
+                <tr>
+                    <td>@country.Country</td>
+                    <td>
+                        <a asp-controller="Home" asp-action="Details" asp-route-Id="@country.CountryId" class="btn btn-dark">დეტალურად</a>
+                        <a class="btn btn-primary">რედაქტირება</a>
+                        <a class="btn btn-danger">წაშლა</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
